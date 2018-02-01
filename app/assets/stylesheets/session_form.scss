@@ -19,13 +19,13 @@
 }
 
 .login-form {
-  padding: 130px 25px 0px 25px;
+  padding: 80px 25px 0px 25px;
 }
 
 .login-form input {
   width: 100%;
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   padding: 7px 8px;
   border-radius: 5px;
@@ -39,10 +39,11 @@
   border: 1px solid black;
 }
 
-.submit-session {
+.login-form .submit-session {
   background-color: #f50;
   color: #fff;
   border: 1px solid #f50;
+  font-size: 18px;
 }
 
 h3 {
@@ -65,10 +66,10 @@ h6 {
 }
 
 .login-errors {
+  display: flex;
+  justify-content: center;
+  height: 80px;
   color: red;
   font-size: 14px;
   font-weight: 700;
-  position: absolute;
-  top: 120px;
-  left: 90px;
 }

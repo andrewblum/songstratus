@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
 
   renderErrors(){
     if (!this.props.errors) {
-      return (<div></div>);
+      return (<div className="login-errors"></div>);
     }
     return (
       <div className="login-errors">
