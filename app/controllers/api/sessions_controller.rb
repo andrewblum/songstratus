@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       login(@user)
-      render "api/users/show"
+      render :session_user
     else
       render json: ['error'], status: 422
     end

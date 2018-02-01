@@ -1,12 +1,17 @@
 import React from 'react';
-import SessionButtonsContainer from './session_buttons_container';
+import { Route } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util';
+import SessionFormContainer from './session_form/session_form_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = () => (
   <div>
     <header>
-      <h1>Song Stratus</h1>
-      <SessionButtonsContainer/>
+      <NavBarContainer/>
     </header>
+
+    <AuthRoute exact path="/signup" component={SessionFormContainer}/>
+    <AuthRoute exact path="/login" component={SessionFormContainer}/>
   </div>
 );
 
