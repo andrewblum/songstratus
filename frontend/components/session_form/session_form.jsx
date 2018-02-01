@@ -39,9 +39,18 @@ class SessionForm extends React.Component {
   }
 
   renderErrors(){
+    if (!this.props.errors) {
+      return (<div></div>);
+    }
     return (
       <div className="login-errors">
-        {this.props.errors}
+        <ul>
+          {this.props.errors.map((error) => (
+            <li>
+              {error}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
@@ -53,8 +62,8 @@ class SessionForm extends React.Component {
           <h3>{this.props.formType}</h3>
           <Link to="/" className="close-modal">X</Link>
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            {this.renderErrors()}
             <div className="login-form">
+                {this.renderErrors()}
                 <input
                   type="text"
                   value={this.state.username}
