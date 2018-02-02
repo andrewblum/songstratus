@@ -7,7 +7,12 @@ end
 
 # Paperclip to handle file attchments to the Song model
 gem "paperclip", "~> 5.2.1"
-
+#AWS for s3
+gem 'aws-sdk', '< 3.0'
+#Hide api keys
+gem 'figaro'
+#Strings for route id's
+gem 'friendly_id'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

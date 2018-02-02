@@ -7,6 +7,8 @@ class User < ApplicationRecord
             presence: true,
             uniqueness: true
 
+  has_many :songs
+
   attr_reader :password
   after_initialize :ensure_session_token, :ensure_profile_image
 
@@ -35,7 +37,7 @@ class User < ApplicationRecord
   end
 
   def ensure_profile_image
-    self.profile_image_url ||= "/default.png"
+    self.profile_image_url ||= "https://i.imgur.com/R3dvpLT.jpg"
   end
 
 end

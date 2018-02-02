@@ -2,17 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
   const loggedIn = (user, logout) => (
-    <div>
-      <Link to="/">Upload</Link>
-      <Link to="/">{user.username}</Link>
+
+    <div className="session-buttons">
       <button onClick={logout}>Logout</button>
+      <Link to="/upload">Upload</Link>
+      <Link to="/" className="dropdown-box">
+        <img className="profile-img-small"
+          src={user.profile_image_url}>
+        </img>
+        <div className="user-name">
+          {user.username}
+        </div>
+        <div className='arrow'></div>
+      </Link>
     </div>
   );
 
   const notLoggedIn = () => (
     <div>
-      <Link to="/signup">Sign Up</Link>
       <Link to="/login">Log In</Link>
+      <Link to="/signup">Create Acount</Link>
     </div>
   );
 

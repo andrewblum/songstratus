@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'songs/create'
+  end
+
+  namespace :api do
+    get 'songs/destroy'
+  end
+
+  namespace :api do
+    get 'songs/show'
+  end
+
+  namespace :api do
+    get 'songs/update'
+  end
+
   root 'static_pages#root'
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]

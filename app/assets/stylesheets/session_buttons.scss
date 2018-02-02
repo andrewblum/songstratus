@@ -1,0 +1,27 @@
+.session-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-box {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  background-image: url(https://a-v2.sndcdn.com/assets/images/header/dropdown-cf3420a.svg);
+  margin: 5px 0 0 0;
+  width: 8px;
+  height: 5px;
+  opacity: .75;
+}
+
+.profile-img-small {
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+}
+
+.user-name {
+  padding: 0 10px 0 10px;
+}
