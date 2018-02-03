@@ -9,5 +9,14 @@ class Song < ApplicationRecord
 
   belongs_to :user
 
+  after_initialize :set_artist, :ensure_album_image_url
+
+  def set_artist
+    self.artist = User.find_by_id(self.user_id).username
+  end
+
+  def ensure_album_image_url
+    self.album_image_url ||= "default.png"
+  end
 
 end

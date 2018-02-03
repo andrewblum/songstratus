@@ -1,6 +1,7 @@
 class Api::SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
+    @song.save
   end
 
   def destroy
@@ -13,6 +14,8 @@ class Api::SongsController < ApplicationController
   def update
   end
 
+  private
   def song_params
-    params.require(:song).permit(:title, :user_id)
+    params.require(:song).permit(:title, :user_id, :audio)
+  end
 end
