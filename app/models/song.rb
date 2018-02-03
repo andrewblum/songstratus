@@ -6,6 +6,8 @@ class Song < ApplicationRecord
     content_type: ['audio/mpeg', 'audio/x-mpeg', 'audio/mp3',
                   'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3',
                   'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio']
+  has_attached_file :image, default_url: "//:0"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :user
 

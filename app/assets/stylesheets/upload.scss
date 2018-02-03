@@ -99,12 +99,12 @@
   box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
   padding: 25px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .upload-inputs-box {
   padding: 0 0 0 30px;
-  display: flex;
+  width: 100%;
 }
 
 .submit-upload-box {
@@ -122,9 +122,28 @@
   padding: 2px 7px;
   color: #333;
   width: 100%;
+  box-sizing: border-box;
+}
+
+.description-input {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  padding: 2px 7px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+  height: 130px;
 }
 
 .title-input:focus {
+  transition: .1s;
+  border-color: #999;
+}
+
+.description-input:focus {
   transition: .1s;
   border-color: #999;
 }
@@ -146,5 +165,14 @@
 
 .title {
   display: block;
-  margin: 0 0 6px 0;
+  margin: 6px 0 6px 0;
+}
+
+.text-field {
+  text-align: left;
+}
+
+.description {
+  display: block;
+  margin: 25px 0 6px 0;
 }

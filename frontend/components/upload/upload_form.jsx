@@ -11,7 +11,8 @@ class UploadForm extends React.Component {
       audioUrl: "",
       imageFile: null,
       imageUrl: "//:0",
-      title: "Your title here"
+      title: "",
+      description: ""
     };
     this.updateFile = this.updateFile.bind(this);
     this.updateImage = this.updateImage.bind(this);
@@ -54,6 +55,7 @@ class UploadForm extends React.Component {
     formData.append("song[audio]", this.state.audioFile);
     formData.append("song[title]", this.state.title);
     formData.append("song[user_id]", this.props.currentUser.id);
+    formData.append("song[description]", this.props.description);
     this.props.uploadSong(formData);
   }
 
@@ -97,7 +99,17 @@ class UploadForm extends React.Component {
                     onChange={this.updateField('title')}
                     value={this.state.title}
                     className="title-input"
+                    placeholder="Title your track"
                     />
+                  <label className="description">Description</label>
+                    <textarea
+                      row="6"
+                      cols="40"
+                      onChange={this.updateField('description')}
+                      value={this.state.description}
+                      className="description-input"
+                      placeholder="Describe your track"
+                      />
                 </div>
               </div>
 
