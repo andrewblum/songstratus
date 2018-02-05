@@ -12,3 +12,21 @@ body {
   position: absolute;
   width: 1px;
 }
+
+.app {
+}
+
+.main-content {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #f2f2f2;
+  background-repeat: repeat-y;
+}
+
+.main-content-box {
+  background: white;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 30px;
+}

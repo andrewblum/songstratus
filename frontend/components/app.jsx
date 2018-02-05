@@ -5,16 +5,20 @@ import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import UploadFormContainer from './upload_form/upload_form_container';
 import PlayControls from './play_controls/play_controls';
-import WaveForm from './wave_form/wave_form';
+import Song from './song/song';
+import UserContainer from './user/user_container';
 
 const App = () => (
-  <div>
+  <div className="app">
     <header>
       <NavBarContainer/>
     </header>
 
-    <main>
-      <WaveForm/>
+    <main className="main-content">
+      <div className="main-content-box">
+      <Route path="/:userId" component={UserContainer}/>
+      <Route path="/:userId/:songId" component={Song}/>
+      </div>
     </main>
 
     <footer>

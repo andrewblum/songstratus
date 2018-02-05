@@ -1,0 +1,32 @@
+.main-user-view {
+
+
+}
+
+.main-user-top {
+  height: 260px;
+  background-image: url("https://i.redd.it/ktcd0zq8gnd01.jpg");
+  background-size: cover;
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-user-image-box {
+  border-radius: 50%;
+}
+
+.main-user-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.main-user-title {
+
+  background: linear-gradient(315deg, rgb(204, 203, 199) 0%, rgb(94, 97, 96) 100%);
+}
