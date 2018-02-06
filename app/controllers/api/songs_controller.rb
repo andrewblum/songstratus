@@ -14,8 +14,12 @@ class Api::SongsController < ApplicationController
   def update
   end
 
+  def index
+    @songs = Song.where(user_id: params[:user_id])
+  end
+
   private
   def song_params
-    params.require(:song).permit(:title, :user_id, :audio, :image, :description)
+    params.require(:song).permit(:title, :user_id, :audio, :image)
   end
 end

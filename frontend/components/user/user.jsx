@@ -1,4 +1,5 @@
 import React from 'react';
+import SongIndexContainer from '../song_index/song_index_container';
 
 class Song extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class Song extends React.Component {
           </div>
           <div className="main-user-bottom-content">
             <div className="main-user-bottom-song-box">
-              Songbox
+              <SongIndexContainer/>
             </div>
             <div className="main-user-sidebar">
               Sidebar

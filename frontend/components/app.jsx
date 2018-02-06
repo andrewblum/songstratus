@@ -16,8 +16,8 @@ const App = () => (
 
     <main className="main-content">
       <div className="main-content-box">
-      <Route path="/:userId" component={UserContainer}/>
-      <Route path="/:userId/:songId" component={Song}/>
+        <Route path="/:userId" component={UserContainer}/>
+        <Route path="/:userId/:songId" component={Song}/>
       </div>
     </main>
 

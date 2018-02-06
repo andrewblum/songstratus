@@ -9,21 +9,39 @@ class Song extends React.Component {
 
   render() {
     return (
-      <div className="main-song-view">
-        <div className="main-song-top">
-          <div className="top-song-left">
-            <div className="main-song-title">
+      <div className="small-song-box">
+
+        <div className="small-song-art-box">
+          <img
+            className="small-song-art"
+            src={this.props.track.image_url}>
+          </img>
+        </div>
+
+        <div className="small-song-content">
+
+          <div className="small-song-control-box">
+            <div className="small-song-play">
+              play
             </div>
-            <div className="main-song-waveform">
-              <WaveForm/>
+            <div className="small-song-title-box">
+              <div className="small-song-artist">
+                {this.props.track.artist}
+              </div>
+              <div className="small-song-title">
+                {this.props.track.title}
+              </div>
             </div>
           </div>
-          <div className="main-song-art">
+
+          <div className="small-song-waveform">
+            <WaveForm/>
+          </div>
+          <div className="small-song-social">
+            social
           </div>
         </div>
-        <div className="main-song-bottom">
-          comments and such go here
-        </div>
+
       </div>
     );
   }
