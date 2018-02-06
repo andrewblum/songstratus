@@ -22,7 +22,6 @@ class Song extends React.Component {
 
           <div className="small-song-control-box">
             <div className="small-song-play">
-              play
             </div>
             <div className="small-song-title-box">
               <div className="small-song-artist">
@@ -35,7 +34,7 @@ class Song extends React.Component {
           </div>
 
           <div className="small-song-waveform">
-            <WaveForm/>
+            <WaveForm track={this.props.track}/>
           </div>
           <div className="small-song-social">
             social

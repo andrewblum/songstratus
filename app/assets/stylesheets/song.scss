@@ -5,12 +5,12 @@
 }
 
 .small-song-art-box {
-  width: 160px;
-  height: 160px;
+  margin-right: 15px;
 }
 
 .small-song-art {
-
+  width: 160px;
+  height: 160px;
 }
 
 .small-song-content {
@@ -20,18 +20,44 @@
 .small-song-control-box {
   display: flex;
   flex-direction: row;
+  padding-top: 7px;
+  margin-bottom: 6px;
 }
 
 .small-song-play {
+  margin-right: 5px;
+  width: 36px;
+  height: 36px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjQ8L3RpdGxlPjxwYXRoIGQ9Ik0wIDEybDEuNjE1LTZMMCAwbDcgNi03IDZ6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  background-size: 12px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f50;
+  border-radius: 50%;
+}
 
+.small-song-play:focus {
+  background-color: #f30;
+}
+
+.small-song-play:hover {
+  background-color: #f30;
+  cursor: pointer;
 }
 
 .small-song-title-box {
 
 }
 
-.small-song-artist {
+.small-song-title {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.2;
+}
 
+.small-song-artist {
+  color: #999;
+  font-size: 12px;
 }
 
 .small-song-waveform {
@@ -40,5 +66,5 @@
 }
 
 .small-song-social {
-
+  margin-top: 22px;
 }
