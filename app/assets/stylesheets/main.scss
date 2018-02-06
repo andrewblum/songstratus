@@ -17,16 +17,18 @@ body {
 }
 
 .main-content {
-  position: fixed;
-  height: 100%;
-  width: 100%;
+  margin-top: 46px;
+  height: calc(100vh);
   background: #f2f2f2;
   background-repeat: repeat-y;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-content-box {
-  background: white;
+  background: #fff;
   width: 1140px;
-  margin: 0 auto;
   padding: 0 30px;
+  height: calc(100vh);
 }

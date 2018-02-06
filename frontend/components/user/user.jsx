@@ -24,14 +24,28 @@ class Song extends React.Component {
               className="main-user-image"
               src={`${this.props.user.profile_image_url}`}/>
           </div>
-          <div className="main-user-title">
-            {this.props.user.username}
+          <div className="main-user-title-box">
+            <div className="main-user-title">
+              {this.props.user.username}
+            </div>
           </div>
         </div>
 
-        <div className="main-song-bottom">
-          songs go here!
+        <div className="main-user-bottom">
+          <div className="main-user-bottom-nav">
+            Tracks
+          </div>
+          <div className="main-user-bottom-content">
+            <div className="main-user-bottom-song-box">
+              Songbox
+            </div>
+            <div className="main-user-sidebar">
+              Sidebar
+            </div>
+          </div>
         </div>
+
+
       </div>
     );
   }
