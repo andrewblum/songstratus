@@ -36,11 +36,28 @@
   border-radius: 50%;
 }
 
+.small-song-pause {
+  margin-right: 5px;
+  width: 36px;
+  height: 36px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBhdXNlIDI4PC90aXRsZT48cGF0aCBkPSJNNSAwdjEyaDNWMEg1ek0wIDB2MTJoM1YwSDB6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+  background-size: 12px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f30;
+  border-radius: 50%;
+}
+
 .small-song-play:focus {
   background-color: #f30;
 }
 
 .small-song-play:hover {
+  background-color: #f30;
+  cursor: pointer;
+}
+
+.small-song-pause:hover {
   background-color: #f30;
   cursor: pointer;
 }

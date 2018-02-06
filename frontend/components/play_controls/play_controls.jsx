@@ -7,13 +7,12 @@ class PlayControls extends React.Component {
     super(props);
     this.props = props;
     this.state = {
-      url: 'https://s0.vocaroo.com/media/download_temp/Vocaroo_s0dpWmUK8w1F.mp3',
-      playing: false,
+      url: "",
       playpause: 'play add-pointer',
       played: 0,
       volume: 0.7,
       inSeek: false,
-      duration: 0
+      duration: 0,
     };
     this.pauseOrPlay = this.pauseOrPlay.bind(this);
     this.ref = this.ref.bind(this);
@@ -26,9 +25,7 @@ class PlayControls extends React.Component {
   }
 
   pauseOrPlay() {
-    this.setState({playing: !this.state.playing });
-    if (this.state.playing) this.setState({playpause: 'play add-pointer'});
-    if (!this.state.playing) this.setState({playpause: 'pause add-pointer'});
+    this.props.playPause(!this.props.playing);
   }
 
   onDuration (duration) {
@@ -61,13 +58,21 @@ class PlayControls extends React.Component {
     this.player = player;
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.song) {
+      this.setState({url: newProps.song.audio_url});
+    }
+    if (!newProps.playing) this.setState({playpause: 'play add-pointer'});
+    if (newProps.playing) this.setState({playpause: 'pause add-pointer'});
+  }
+
   render () {
     return (
         <div className="play-controls-box">
           <div className="play-controls">
             <ReactPlayer
               url={this.state.url}
-              playing={this.state.playing}
+              playing={this.props.playing}
               onProgress={this.moveSlider}
               ref={this.ref}
               onProgress={this.onProgress}

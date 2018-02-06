@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session_form/session_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import UploadFormContainer from './upload_form/upload_form_container';
-import PlayControls from './play_controls/play_controls';
+import PlayControlsContainer from './play_controls/play_controls_container';
 import Song from './song/song';
 import UserContainer from './user/user_container';
 
@@ -22,7 +22,7 @@ const App = () => (
     </main>
 
     <footer>
-      <PlayControls/>
+      <PlayControlsContainer/>
     </footer>
 
     <AuthRoute exact path="/signup" component={SessionFormContainer}/>

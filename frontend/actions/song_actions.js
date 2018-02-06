@@ -2,6 +2,8 @@ import * as SongApiUtil from '../util/song_api_util';
 
 export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
+export const RECEIVE_CURRENT_SONG = "RECEIVE_CURRENT_SONG";
+export const PLAY_PAUSE = 'PLAY_PAUSE';
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -11,6 +13,16 @@ export const receiveSong = (song) => ({
 export const receiveAllSongs = (songs) => ({
   type: RECEIVE_ALL_SONGS,
   songs
+});
+
+export const receiveCurrentSong = (song) => ({
+  type: RECEIVE_CURRENT_SONG,
+  song
+});
+
+export const playPause = (bool) => ({
+  type: PLAY_PAUSE,
+  bool
 });
 
 export const uploadSong = (song) => dispatch => (

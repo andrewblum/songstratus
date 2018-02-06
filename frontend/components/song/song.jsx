@@ -5,6 +5,27 @@ class Song extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
+    this.state = {
+      playpause: 'small-song-play',
+      playing: false
+    };
+    this.onPlayPause = this.onPlayPause.bind(this);
+  }
+
+  onPlayPause(e) {
+    console.log(this.props.currentSong);
+    console.log(this.props.track);
+    if (!this.state.playing) {
+      if (Object.keys(this.props.currentSong).length === 1
+        || this.props.currentSong.song.id !== this.props.track.id) {
+          this.props.receiveCurrentSong(this.props.track);
+      }
+      this.props.playPause(true);
+      this.setState({playing: true, playpause: 'small-song-pause'});
+    } else {
+      this.props.playPause(false);
+      this.setState({playing: false, playpause: 'small-song-play'});
+    }
   }
 
   render() {
@@ -21,8 +42,12 @@ class Song extends React.Component {
         <div className="small-song-content">
 
           <div className="small-song-control-box">
-            <div className="small-song-play">
+
+            <div
+              className={this.state.playpause}
+              onClick={this.onPlayPause}>
             </div>
+
             <div className="small-song-title-box">
               <div className="small-song-artist">
                 {this.props.track.artist}

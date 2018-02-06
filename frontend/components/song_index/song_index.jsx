@@ -1,5 +1,5 @@
 import React from 'react';
-import Song from '../song/song';
+import SongContainer from '../song/song_container';
 
 class SongIndex extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class SongIndex extends React.Component {
     } else {
       let songs = [];
       Object.keys(this.props.tracks).forEach(each => {
-        songs.push(<Song track={this.props.tracks[each]}/>);
+        songs.push(<SongContainer track={this.props.tracks[each]}/>);
       });
       return (
         <div>
