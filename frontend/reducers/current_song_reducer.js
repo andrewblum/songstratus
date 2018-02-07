@@ -3,7 +3,17 @@ import { RECEIVE_CURRENT_SONG,
          PLAY_PAUSE,
          SET_PLAYED} from '../actions/song_actions';
 
-const currentSongReducer = (state = {playing: false, played: 0.0}, action) => {
+let _nullState = {
+  playing: false,
+  played: 0.0,
+  song:{
+  id: -1,
+  audio_url: "//:0",
+  image_url: "//:0"
+  }
+};
+
+const currentSongReducer = (state = _nullState, action) => {
   Object.freeze(state);
   let newState;
   switch(action.type){

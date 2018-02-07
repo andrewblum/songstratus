@@ -119,6 +119,20 @@ class PlayControls extends React.Component {
               onChange={this.adjustVolume}
             />
 
+          <div className="control-song-info-box">
+            <div className="control-song-art">
+              <img src={this.props.song.image_url}></img>
+            </div>
+            <div className="control-song-title-box">
+              <div className="control-song-artist">
+                {this.props.song.artist}
+              </div>
+              <div className="control-song-title">
+                {this.props.song.title}
+              </div>
+            </div>
+          </div>
+
           </div>
         </div>
     );

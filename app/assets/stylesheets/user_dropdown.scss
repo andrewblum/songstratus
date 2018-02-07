@@ -1,0 +1,68 @@
+.user-dropdown-modal {
+  position: relative;
+}
+
+.user-dropdown {
+  position: absolute;
+  width: 135px;
+  top: 22px;
+  left: -145px;
+  background-color: black;
+}
+
+.user-dropdown li {
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.user-dropdown li:hover {
+  background-color: #333;
+  cursor: pointer;
+  color: #fff;
+}
+
+.user-dropdown li a {
+  padding: 8px 10px 8px 33px;
+  font-size: 12px;
+  position: relative;
+}
+
+.drop-item-profile-icon {
+  background-image: url(https://a-v2.sndcdn.com/assets/images/header/profile/user-853e629.svg);
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  opacity: .75;
+  background-size: 16px;
+  background-position: center 2px;
+}
+
+.drop-item-tracks-icon {
+  background-image: url(https://a-v2.sndcdn.com/assets/images/header/profile/track_manager_light@2x-49a9db5.png);
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  opacity: .75;
+  background-size: 16px;
+  background-position: center 2px;
+}
+
+.drop-item-logout-icon {
+  background-image: url('https://image.flaticon.com/icons/png/128/152/152534.png');
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  opacity: .75;
+  background-size: 16px;
+  background-position: center 2px;
+}
