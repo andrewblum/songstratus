@@ -12,6 +12,19 @@
   justify-content: center;
 }
 
+.upload-close-x {
+  background: url(https://a-v2.sndcdn.com/assets/images/close-modal-dark-6aac3b9.svg) center no-repeat;
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  text-indent: 20px;
+  border: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 .upload-box {
   display: block;
   width: 800px;

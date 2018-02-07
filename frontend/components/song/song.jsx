@@ -64,8 +64,18 @@ class Song extends React.Component {
           <div className={`small-song-waveform ${this.state.playing_focused}`}>
             <WaveFormContainer track={this.props.track}/>
           </div>
-          <div className="small-song-social">
-            social
+          <div className="small-song-footer">
+            <div className="small-song-footer-left">
+
+            </div>
+            <div className="small-song-footer-right">
+              <div className="small-song-footer-plays">
+                0
+              </div>
+              <div className="small-song-footer-comments">
+                3838
+              </div>
+            </div>
           </div>
         </div>
 

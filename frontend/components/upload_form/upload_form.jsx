@@ -62,6 +62,7 @@ class UploadForm extends React.Component {
   render() {
     return (
       <div onClick={this.props.closeUploadModal} className="upload-modal">
+        <div onClick={this.props.closeUploadModal} className="upload-close-x"></div>
         <div className="upload-box">
           <div className="upload-text">Upload to Song Stratus</div>
           <form onSubmit={this.handleSubmit}>
