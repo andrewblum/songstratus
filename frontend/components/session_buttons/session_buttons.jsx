@@ -29,8 +29,10 @@ import UploadFormContainer from '../upload_form/upload_form_container';
       this.setState({uploadModalOpen: !this.state.uploadModalOpen});
     }
 
-    closeUploadModal() {
-      this.setState({uploadModalOpen: false});
+    closeUploadModal(e) {
+      if (e.target === e.currentTarget) {
+        this.setState({uploadModalOpen: false});
+      }
     }
 
     closeUserModal() {
@@ -40,7 +42,7 @@ import UploadFormContainer from '../upload_form/upload_form_container';
     renderUploadModal() {
       if (this.state.uploadModalOpen) {
         return (
-          <UploadFormContainer/>
+          <UploadFormContainer closeUploadModal={this.closeUploadModal}/>
         );
       }
       return (<div></div>);

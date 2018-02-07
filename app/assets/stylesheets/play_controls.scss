@@ -66,6 +66,7 @@
 
 
 .control-song-info-box {
+  margin-left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -75,9 +76,10 @@
 }
 
 .control-song-art img {
-  max-width: 30px;
-  max-height: 30px;
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
+  margin-top: 7px;
 }
 
 .control-song-title-box {
@@ -94,6 +96,5 @@
 .control-song-title {
   font-size: 11px;
   color: #666;
-  line-height: 1.5em;
-
+  margin-top: 2px;
 }

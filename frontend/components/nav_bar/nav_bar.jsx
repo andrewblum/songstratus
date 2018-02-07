@@ -14,8 +14,12 @@ class NavBar extends React.Component {
     if (props.currentUser) {
       return (
         <div className="left-nav-links">
-            <Link to="/">Home</Link>
-            <Link to={`/${this.props.currentUser.id}`}>Collection</Link>
+            <div className="nav-home-box">
+              <Link to="/">Home</Link>
+            </div>
+            <div className="nav-collection-box">
+              <Link to={`/${this.props.currentUser.id}`}>Collection</Link>
+            </div>
         </div>
       );
     } else {

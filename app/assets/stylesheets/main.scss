@@ -26,11 +26,12 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  overflow-y: scroll;
 }
 
 .main-content-box {
   background: #fff;
   width: 1140px;
   padding: 0 30px;
-  height: calc(100vh);
+  height: 100%;
 }
