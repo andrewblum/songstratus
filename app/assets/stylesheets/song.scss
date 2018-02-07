@@ -80,6 +80,18 @@
 .small-song-waveform {
   height: 60px;
   box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.7;
+  color: #333;
+}
+
+.small-song-waveform:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.playing-focus {
+  opacity: 1;
 }
 
 .small-song-social {

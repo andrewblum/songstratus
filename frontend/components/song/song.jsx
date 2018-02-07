@@ -1,5 +1,5 @@
 import React from 'react';
-import WaveForm from '../wave_form/wave_form';
+import WaveFormContainer from '../wave_form/wave_form_container';
 
 class Song extends React.Component {
   constructor(props) {
@@ -7,24 +7,27 @@ class Song extends React.Component {
     this.props = props;
     this.state = {
       playpause: 'small-song-play',
-      playing: false
+      playing: false,
+      playing_focused: ''
     };
     this.onPlayPause = this.onPlayPause.bind(this);
   }
 
   onPlayPause(e) {
-    console.log(this.props.currentSong);
-    console.log(this.props.track);
-    if (!this.state.playing) {
-      if (Object.keys(this.props.currentSong).length === 1
+    if (Object.keys(this.props.currentSong).length === 2
         || this.props.currentSong.song.id !== this.props.track.id) {
           this.props.receiveCurrentSong(this.props.track);
-      }
-      this.props.playPause(true);
+    }
+    this.props.playPause(!this.props.playing);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.currentSong.song.id == newProps.track.id && newProps.playing) {
       this.setState({playing: true, playpause: 'small-song-pause'});
+      this.setState({playing_focused: 'playing-focus'});
     } else {
-      this.props.playPause(false);
       this.setState({playing: false, playpause: 'small-song-play'});
+      this.setState({playing_focused: ""});
     }
   }
 
@@ -58,8 +61,8 @@ class Song extends React.Component {
             </div>
           </div>
 
-          <div className="small-song-waveform">
-            <WaveForm track={this.props.track}/>
+          <div className={`small-song-waveform ${this.state.playing_focused}`}>
+            <WaveFormContainer track={this.props.track}/>
           </div>
           <div className="small-song-social">
             social

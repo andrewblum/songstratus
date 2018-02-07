@@ -22,6 +22,7 @@ class PlayControls extends React.Component {
     this.onProgress = this.onProgress.bind(this);
     this.adjustVolume = this.adjustVolume.bind(this);
     this.onDuration = this.onDuration.bind(this);
+    this.formatTime = this.formatTime.bind(this);
   }
 
   pauseOrPlay() {
@@ -43,19 +44,28 @@ class PlayControls extends React.Component {
   seekUnclick(e) {
     this.setState({inSeek: false});
     this.player.seekTo(parseFloat(e.target.value));
+    this.props.setPlayed(parseFloat(e.target.value));
   }
 
   seekChange(e) {
     this.setState({played: parseFloat(e.target.value)});
+    this.props.setPlayed(parseFloat(e.target.value));
   }
 
   onProgress(state) {
-    console.log(state);
     if (!this.state.inSeek) this.setState(state);
   }
 
   ref(player) {
     this.player = player;
+  }
+
+  formatTime(seconds) {
+    var date = new Date(null);
+    date.setSeconds(seconds);
+    return (
+      date.toTimeString().slice(4, 9)
+    );
   }
 
   componentWillReceiveProps(newProps) {
@@ -83,17 +93,25 @@ class PlayControls extends React.Component {
               onClick={this.pauseOrPlay}
               className={this.state.playpause}>
             </button>
-            {Math.round(this.state.duration * this.state.played)}
-            <input
-              className="song-progress"
-              type='range' min={0} max={1}
-              step='any'
-              value={this.state.played}
-              onMouseDown={this.seekClick}
-              onMouseUp={this.seekUnclick}
-              onChange={this.seekChange}
-            />
-          {Math.round(this.state.duration)}
+
+            <div className="song-progress-box">
+              <div className="song-progress-duration">
+                {this.formatTime(Math.round(this.state.duration * this.state.played))}
+              </div>
+              <input
+                className="song-progress"
+                type='range' min={0} max={1}
+                step='any'
+                value={this.state.played}
+                onMouseDown={this.seekClick}
+                onMouseUp={this.seekUnclick}
+                onChange={this.seekChange}
+              />
+            <div className="song-progress-length">
+              {this.formatTime(Math.round(this.state.duration))}
+            </div>
+            </div>
+
             <input
               className="volume"
               type='range' min={0} max={1} step='any'

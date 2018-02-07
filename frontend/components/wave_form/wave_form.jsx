@@ -8,16 +8,27 @@ class WaveForm extends React.Component {
     this.state = {};
   }
 
+  componentWillReceiveProps(newProps) {
+    if (newProps.playing && newProps.song.id == newProps.track.id) {
+      this.wavesurfer.play();
+    } else {
+      this.wavesurfer.pause();
+    }
+  }
+
   componentDidMount() {
     this.wavesurfer = WaveSurfer.create({
       container: `#song-${this.props.track.id}-waveform`,
       progressColor: '#f50',
       height: 60,
       cursorWidth: 0,
-      barHeight: 5,
-      barWidth: 1,
+      barHeight: 1,
+      barWidth: 2,
+      waveColor: '#666'
     });
     this.wavesurfer.load(this.props.track.audio_url);
+    this.wavesurfer.setMute(true);
+    this.wavesurfer.on('seek', e => this.props.setPlayed(e));
   }
 
   render () {

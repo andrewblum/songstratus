@@ -4,6 +4,7 @@ export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_CURRENT_SONG = "RECEIVE_CURRENT_SONG";
 export const PLAY_PAUSE = 'PLAY_PAUSE';
+export const SET_PLAYED = 'SET_PLAYED';
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -23,6 +24,11 @@ export const receiveCurrentSong = (song) => ({
 export const playPause = (bool) => ({
   type: PLAY_PAUSE,
   bool
+});
+
+export const setPlayed = (float) => ({
+  type: SET_PLAYED,
+  float
 });
 
 export const uploadSong = (song) => dispatch => (

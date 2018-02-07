@@ -38,9 +38,27 @@
   background-position: center;
 }
 
-.song-progress {
+.song-progress-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.song-progress-duration {
+  color: #f50;
+  font-size: 11px;
+}
+
+.song.progress {
+
 
 }
+
+.song-progress-length {
+
+}
+
 
 .volume {
 
