@@ -1,5 +1,6 @@
 import React from 'react';
 import WaveFormContainer from '../wave_form/wave_form_container';
+import { Link } from 'react-router-dom';
 
 class Song extends React.Component {
   constructor(props) {
@@ -40,10 +41,13 @@ class Song extends React.Component {
       <div className="small-song-box">
 
         <div className="small-song-art-box">
-          <img
-            className="small-song-art"
-            src={this.props.track.image_url}>
-          </img>
+          <Link
+            to={`${this.props.track.user_id}/${this.props.track.id}`}>
+            <img
+              className="small-song-art"
+              src={this.props.track.image_url}>
+            </img>
+          </Link>
         </div>
 
         <div className="small-song-content">
@@ -60,7 +64,11 @@ class Song extends React.Component {
                 {this.props.track.artist}
               </div>
               <div className="small-song-title">
-                {this.props.track.title}
+                <Link
+                  className="song-title-link"
+                  to={`${this.props.track.user_id}/${this.props.track.id}`}>
+                  {this.props.track.title}
+                </Link>
               </div>
             </div>
           </div>

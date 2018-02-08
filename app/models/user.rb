@@ -6,6 +6,10 @@ class User < ApplicationRecord
   validates :username,
             presence: true,
             uniqueness: true
+  has_attached_file :profile_image, default_url: "//:0"
+  validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\z/
+  has_attached_file :banner_image, default_url: "//:0"
+  validates_attachment_content_type :banner_image, content_type: /\Aimage\/.*\z/
 
   has_many :songs
 

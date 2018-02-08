@@ -153,3 +153,13 @@
   cursor: pointer;
   color: #333;
 }
+
+.song-title-link {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.song-title-link:hover {
+  color: inherit;
+  opacity: 1;
+}
