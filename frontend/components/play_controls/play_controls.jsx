@@ -10,7 +10,7 @@ class PlayControls extends React.Component {
       url: "",
       playpause: 'play add-pointer',
       played: 0,
-      volume: 0.7,
+      volume: 0.8,
       inSeek: false,
       duration: 0,
     };
@@ -69,8 +69,10 @@ class PlayControls extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.song) {
-      this.setState({url: newProps.song.audio_url});
+    if (this.props.song.id !== newProps.song.id) {
+      console.log('SETTING SEEK TO 0');
+      this.setState({url: newProps.song.audio_url},
+                    () => this.player.seekTo(0.0));
     }
     if (!newProps.playing) this.setState({playpause: 'play add-pointer'});
     if (newProps.playing) this.setState({playpause: 'pause add-pointer'});
@@ -88,6 +90,8 @@ class PlayControls extends React.Component {
               onProgress={this.onProgress}
               volume={this.state.volume}
               onDuration={this.onDuration}
+              width="0px"
+              height="0px"
             />
             <button
               onClick={this.pauseOrPlay}
@@ -98,26 +102,31 @@ class PlayControls extends React.Component {
               <div className="song-progress-duration">
                 {this.formatTime(Math.round(this.state.duration * this.state.played))}
               </div>
-              <input
-                className="song-progress"
-                type='range' min={0} max={1}
-                step='any'
-                value={this.state.played}
-                onMouseDown={this.seekClick}
-                onMouseUp={this.seekUnclick}
-                onChange={this.seekChange}
-              />
+              <div className="playback-slider">
+                <input
+                  className="song-progress"
+                  type='range' min={0} max={1}
+                  step='any'
+                  value={this.state.played}
+                  onMouseDown={this.seekClick}
+                  onMouseUp={this.seekUnclick}
+                  onChange={this.seekChange}
+                />
+                <div className="playback-slider-track"></div>
+
+              </div>
             <div className="song-progress-length">
               {this.formatTime(Math.round(this.state.duration))}
             </div>
             </div>
-
-            <input
-              className="volume"
-              type='range' min={0} max={1} step='any'
-              value={this.state.volume}
-              onChange={this.adjustVolume}
-            />
+            <div className="volume-box">
+              <input
+                className="volume"
+                type='range' min={0} max={1} step='any'
+                value={this.state.volume}
+                onChange={this.adjustVolume}
+              />
+            </div>
 
           <div className="control-song-info-box">
             <div className="control-song-art">

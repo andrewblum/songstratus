@@ -14,11 +14,15 @@ class Song extends React.Component {
   }
 
   onPlayPause(e) {
-    if (Object.keys(this.props.currentSong).length === 2
+    if (this.props.currentSong.song.id == -1
         || this.props.currentSong.song.id !== this.props.track.id) {
           this.props.receiveCurrentSong(this.props.track);
     }
-    this.props.playPause(!this.props.playing);
+    if (this.props.currentSong.song.id !== this.props.track.id
+        && this.props.playing) {
+    } else {
+      this.props.playPause(!this.props.playing);
+    }
   }
 
   componentWillReceiveProps(newProps) {

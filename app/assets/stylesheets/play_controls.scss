@@ -6,12 +6,13 @@
   bottom: 0;
   width: 100%;
   z-index: 3;
+  display: flex;
+  justify-content: center;
 }
 
 .play-controls {
+  height: 100%;
   display: flex;
-  position: relative;
-  height: 100%
 }
 
 .add-pointer:hover {
@@ -48,15 +49,14 @@
 .song-progress-duration {
   color: #f50;
   font-size: 11px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.song.progress {
 
-
-}
 
 .song-progress-length {
-
+  margin-left: 10px;
 }
 
 
@@ -97,4 +97,74 @@
   font-size: 11px;
   color: #666;
   margin-top: 2px;
+}
+
+// RANGE SLIDER RESET
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.playback-slider {
+  width: 512px;
+  position: relative;
+}
+
+.playback-slider-track {
+  background-color: #ccc;
+  height: 1px;
+  width: 512px;
+  position: absolute;
+  top: 12.9px;
+}
+
+//RANGE SLIDER STYLES
+input[type=range]:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #f50;
+  cursor: pointer;
+  margin-top: -3px;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #f50;
+  cursor: pointer;
+  margin-top: -3px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  padding: 10px;
+  width: 512px;
+  height: 1px;
+  cursor: pointer;
+}
+
+.volume-box {
+  width: 118px;
 }

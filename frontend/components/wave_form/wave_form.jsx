@@ -14,6 +14,7 @@ class WaveForm extends React.Component {
     } else {
       this.wavesurfer.pause();
     }
+  
   }
 
   componentDidMount() {

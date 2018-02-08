@@ -1,6 +1,5 @@
 body {
   font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode";
-
 }
 
 .hidden {
@@ -19,19 +18,17 @@ body {
 
 .main-content {
   margin-top: 46px;
-  height: calc(100vh);
+  height: auto;
   background: #f2f2f2;
   background-repeat: repeat-y;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  overflow-y: scroll;
 }
 
 .main-content-box {
   background: #fff;
   width: 1140px;
   padding: 0 30px;
-  height: 100%;
+  height: auto;
 }
