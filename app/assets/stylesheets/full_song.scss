@@ -61,7 +61,6 @@
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBhdXNlIDI4PC90aXRsZT48cGF0aCBkPSJNNSAwdjEyaDNWMEg1ek0wIDB2MTJoM1YwSDB6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
 }
 
-
 .main-fullsong-artist-and-title {
   display: flex;
   flex-direction: column;
@@ -170,11 +169,6 @@
   border-color: #999;
 }
 
-
-
-
-
-
 .main-fullsong-bottom-content-box {
   display: flex;
   flex-flow: row;
@@ -205,12 +199,12 @@
 .main-fullsong-comments-left-box {
   width: 120px;
   height: 250px;
-  background-color: yellow;
+  margin-right: 30px;
 }
 
 .main-fullsong-comments-right-box {
-  background-color: green;
   display: flex;
+  flex-grow: 1;
 }
 
 .main-fullsong-waveform-box {

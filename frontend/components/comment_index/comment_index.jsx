@@ -2,7 +2,6 @@ import React from 'react';
 import CommentContainer from '../comment/comment_container';
 
 class CommentIndex extends React.Component {
-
   componentDidMount() {
     this.props.fetchSongsComments(this.props.match.params.songId);
   }
@@ -22,13 +21,12 @@ class CommentIndex extends React.Component {
                      );
       });
       return (
-        <div>
+        <div className="all-comments-box">
           {comments}
         </div>
       );
     }
   }
-
 }
 
 export default CommentIndex;

@@ -10,9 +10,16 @@ class FullSong extends React.Component {
     this.props = props;
     this.state = {
       playPause: "large-song-button large-song-play",
-      playingFocused: ''
+      playingFocused: '',
+      comment: {
+        body: "",
+        time: null,
+        user_id: -1,
+        song_id: -1
+      }
     };
     this.onPlayPause = this.onPlayPause.bind(this);
+    this.submitComment = this.submitComment.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +37,21 @@ class FullSong extends React.Component {
     } else {
       this.props.playPause(!this.props.playing);
     }
+  }
+
+  submitComment(e) {
+    if (e.key === 'Enter') {
+      this.props.createComment({
+        body: this.state.comment.body,
+        user_id: this.props.user.id,
+        song_id: this.props.song.id
+      });
+      this.setState({comment:{body: "", time: null}});
+    }
+  }
+
+  updateComment(type) {
+    return (e) => this.setState({comment: {[type]: e.target.value}});
   }
 
   componentWillReceiveProps(newProps) {
@@ -51,12 +73,9 @@ class FullSong extends React.Component {
     return (
 
       <div className="main-fullsong-view">
-
         <div className="main-fullsong-top">
-
           <div className="main-fullsong-left-top">
             <div className="main-fullsong-title-box">
-
               <div className="main-fullsong-artist-and-title-box">
                 <div className={this.state.playPause}
                   onClick={this.onPlayPause}>
@@ -77,13 +96,10 @@ class FullSong extends React.Component {
                   </div>
                 </div>
               </div>
-
               <div className="main-fullsong-tags-box">
-                2 years ago
+                {this.props.song.created_at}
               </div>
-
             </div>
-
             <div className={`main-fullsong-waveform-box
                             ${this.state.playingFocused}`}>
               <WaveFormContainer
@@ -92,8 +108,6 @@ class FullSong extends React.Component {
                 color={"#fff"}
                 />
             </div>
-
-
           </div>
             <div className="main-fullsong-image-box">
               <img
@@ -101,13 +115,8 @@ class FullSong extends React.Component {
                 src={`${this.props.song.image_url}`}/>
             </div>
         </div>
-
         <div className="main-fullsong-bottom-content-box">
-
-
             <div className="main-fullsong-bottom-content">
-
-
               <div className="add-comment-box">
                 <div className="add-comment-user-img-box">
                   <img
@@ -119,9 +128,11 @@ class FullSong extends React.Component {
                   className='add-comment-input'
                   type='text'
                   placeholder="Write a comment"
+                  onKeyPress={this.submitComment}
+                  value={this.state.comment.body}
+                  onChange={this.updateComment('body')}
                 />
               </div>
-
               <div className="main-fullsong-comments-box">
                 <div className="main-fullsong-comments-left-box">
                   <Link to={`/${this.props.song.user_id}`}>
@@ -140,10 +151,7 @@ class FullSong extends React.Component {
                   <CommentIndexContainer song={this.props.song.id}/>
                 </div>
               </div>
-
             </div>
-
-
             <div className="main-fullsong-sidebar">
               description
             </div>

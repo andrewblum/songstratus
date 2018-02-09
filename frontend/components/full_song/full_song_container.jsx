@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import FullSong from './full_song';
 import { fetchUser } from '../../actions/user_actions';
+import { createComment } from '../../actions/comment_actions';
 import { fetchSong,
          playPause,
          receiveCurrentSong } from '../../actions/song_actions';
@@ -16,7 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
   receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
   fetchSong: (songId) => dispatch(fetchSong(songId)),
   playPause: (bool) => dispatch(playPause(bool)),
-  fetchUser: (userId) => dispatch(fetchUser(userId))
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+  createComment: (comment) => dispatch(createComment(comment))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FullSong);
