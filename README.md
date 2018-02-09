@@ -2,6 +2,8 @@
 
 Song Stratus is a implementation of core SoundCloud features developed over a 10 day period from scratch. The main tools used were Rails, PostgreSQL, React.js, Redux, and AWS S3 storage. This project is under active development and new features will continue to be added. 
 
+[Link to the live demo](https://songstratus.herokuapp.com/)
+
 ## Features 
 
 Account creation with back and front-end authentication using BCrypt.
