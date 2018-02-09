@@ -60,6 +60,7 @@ On the individual song view, users can leave comments for that song. Simply typi
 
 For each song, SongStratus displays that songs number of comments and plays. To avoid the very inefficent process of requesting and then counting every comment for each song everytime it is displayed ```play_count``` and ```num_comments``` columns were added to the songs table. These variables are incremented in the Rails Controllers when the appropriate action is received, such as creating a comment. This result in virtually identical performance while providing the desired functionality. 
 
+To provide timestamps on the comments and songs, the created_at date column for each item is converted to friendly english strings on the back end provided to the front end as part of that items data. 
 
 ## Full List of Libraries and Tools Used    
 |       |    |  
