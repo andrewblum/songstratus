@@ -32,8 +32,7 @@ Comment on tracks
  
 
 
-#
- #### Full List of Libraries and Tools Used    
+## Full List of Libraries and Tools Used    
 |       |    |  
 | ------------- |:-------------:| 
 | Javascript 6 (ES 2015)     | Rails 5.1 | 
