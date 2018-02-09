@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import WaveFormContainer from '../wave_form/wave_form_container';
+import CommentIndexContainer from '../comment_index/comment_index_container';
 
 class FullSong extends React.Component {
 
@@ -136,7 +137,7 @@ class FullSong extends React.Component {
                   </div>
                 </div>
                 <div className="main-fullsong-comments-right-box">
-                  comments listed here
+                  <CommentIndexContainer song={this.props.song.id}/>
                 </div>
               </div>
 

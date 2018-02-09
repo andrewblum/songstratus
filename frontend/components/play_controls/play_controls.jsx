@@ -85,7 +85,6 @@ class PlayControls extends React.Component {
             <ReactPlayer
               url={this.state.url}
               playing={this.props.playing}
-              onProgress={this.moveSlider}
               ref={this.ref}
               onProgress={this.onProgress}
               volume={this.state.volume}

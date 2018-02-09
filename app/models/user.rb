@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates_attachment_content_type :banner_image, content_type: /\Aimage\/.*\z/
 
   has_many :songs
+  has_many :comments
 
   attr_reader :password
   after_initialize :ensure_session_token, :ensure_profile_image

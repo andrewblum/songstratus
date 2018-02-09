@@ -20,7 +20,10 @@ class SongIndex extends React.Component {
     } else {
       let songs = [];
       Object.keys(this.props.tracks).forEach(each => {
-        songs.push(<SongContainer track={this.props.tracks[each]}/>);
+        songs.push(<SongContainer
+                    key={each}
+                    track={this.props.tracks[each]}/>
+                  );
       });
       return (
         <div>

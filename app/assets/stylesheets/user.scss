@@ -71,6 +71,36 @@
   width: 300px;
 }
 
-.update-profile-image-button {
+.update-profile-image-button-box {
+  position: relative;
+}
 
+.update-profile-image-button {
+  background-color: rgba(255,255,255,.8);
+  border-color: rgba(0,0,0,.1);
+  padding: 2px 11px 2px 30px;
+  border-radius: 3px;
+  position: absolute;
+  top: 170px;
+  left: 40px;
+  z-index: 10;
+}
+
+.update-profile-image-button:hover {
+  cursor: pointer;
+  opacity: 1;
+  transition: .1s;
+  background-color: rgba(255,255,255,1);
+}
+
+.update-profile-image-camera {
+  z-index: 122;
+  position: absolute;
+  top: 172px;
+  left: 49px;
+  height: 15px;
+  width: 15px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-image: url(https://egiveusa.com/appdev/images/icons/icomoon/svg/camera2.svg);
 }
