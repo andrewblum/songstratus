@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack --display-error-details"
+    "postinstall": "webpack --display-error-details -p"
   },
   "engines": {
     "node": "6.10.1",
