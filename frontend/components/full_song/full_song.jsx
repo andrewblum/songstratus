@@ -23,6 +23,7 @@ class FullSong extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.state);
     this.props.fetchSong(this.props.match.params.songId);
     this.props.fetchUser(this.props.match.params.userId);
   }
@@ -43,7 +44,7 @@ class FullSong extends React.Component {
     if (e.key === 'Enter') {
       this.props.createComment({
         body: this.state.comment.body,
-        user_id: this.props.user.id,
+        user_id: this.props.currentUser.id,
         song_id: this.props.song.id
       });
       this.setState({comment:{body: "", time: null}});
@@ -121,7 +122,7 @@ class FullSong extends React.Component {
                 <div className="add-comment-user-img-box">
                   <img
                     className="add-comment-user-img"
-                    src={this.props.user.profile_image_url}>
+                    src={this.props.currentUser.profile_image_url}>
                   </img>
                 </div>
                 <input
@@ -153,7 +154,7 @@ class FullSong extends React.Component {
               </div>
             </div>
             <div className="main-fullsong-sidebar">
-              description
+              {this.props.song.description}
             </div>
         </div>
       </div>

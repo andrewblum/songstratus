@@ -1,7 +1,9 @@
 .all-comments-box {
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
+  margin-bottom: 40px;
+  min-height: 30vh;
 }
 
 .comment-box {

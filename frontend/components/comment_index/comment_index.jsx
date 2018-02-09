@@ -4,6 +4,7 @@ import CommentContainer from '../comment/comment_container';
 class CommentIndex extends React.Component {
   componentDidMount() {
     this.props.fetchSongsComments(this.props.match.params.songId);
+    console.log(this.props.state);
   }
 
   render() {
@@ -15,7 +16,7 @@ class CommentIndex extends React.Component {
     } else {
       let comments = [];
       Object.keys(this.props.comments).forEach(each => {
-        comments.push(<CommentContainer
+        comments.unshift(<CommentContainer
                       key={each}
                       comment={this.props.comments[each]}/>
                      );

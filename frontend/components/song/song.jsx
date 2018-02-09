@@ -86,11 +86,17 @@ class Song extends React.Component {
             </div>
             <div className="small-song-footer-right">
               <div className="small-song-footer-plays">
-                0
+                {this.props.track.play_count}
               </div>
-              <div className="small-song-footer-comments">
-                3838
-              </div>
+
+              <Link
+                className="small-song-footer-comments-link"
+                to={`${this.props.track.user_id}/${this.props.track.id}`}>
+                <div className="small-song-footer-comments">
+                  0
+                </div>
+              </Link>
+
             </div>
           </div>
         </div>

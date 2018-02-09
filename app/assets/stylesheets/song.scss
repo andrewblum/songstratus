@@ -126,6 +126,16 @@
   padding-right: 4px;
 }
 
+.small-song-footer-comments-link {
+  color: #999;
+  font-size: 11px;
+  line-height: 12px;
+}
+
+.small-song-footer-comments:hover {
+  color: #333;
+}
+
 .small-song-footer-plays::before {
   display: inline-block;
   content: "";

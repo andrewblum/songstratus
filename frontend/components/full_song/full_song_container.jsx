@@ -10,7 +10,9 @@ const mapStateToProps = (state, ownProps) => ({
   song: state.entities.songs[ownProps.match.params.songId],
   currentSong: state.currentSong,
   playing: state.currentSong.playing,
-  user: state.entities.users[ownProps.match.params.userId]
+  user: state.entities.users[ownProps.match.params.userId],
+  currentUser: state.session.currentUser,
+  state
 });
 
 const mapDispatchToProps = (dispatch) => ({

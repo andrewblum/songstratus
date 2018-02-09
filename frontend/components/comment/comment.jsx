@@ -31,7 +31,6 @@ class Comment extends React.Component {
       </div>
     );
   }
-
 }
 
 export default Comment;

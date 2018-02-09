@@ -9,6 +9,8 @@ class Api::SongsController < ApplicationController
 
   def show
     @song = Song.find_by(id: params[:id])
+    @song.play_count += 1
+    @song.save
   end
 
   def update

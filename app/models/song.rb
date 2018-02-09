@@ -12,7 +12,7 @@ class Song < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  after_initialize :set_artist, :ensure_album_image_url
+  after_initialize :set_artist, :ensure_album_image_url, :set_play_count
 
   def set_artist
     self.artist = User.find_by_id(self.user_id).username
@@ -20,6 +20,10 @@ class Song < ApplicationRecord
 
   def ensure_album_image_url
     self.album_image_url ||= "default.png"
+  end
+
+  def set_play_count
+    self.play_count ||= 0
   end
 
 end
