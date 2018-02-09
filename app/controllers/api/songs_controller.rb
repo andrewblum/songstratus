@@ -8,7 +8,7 @@ class Api::SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find_by(params[:id])
+    @song = Song.find_by(id: params[:id])
   end
 
   def update

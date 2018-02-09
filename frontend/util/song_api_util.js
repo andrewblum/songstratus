@@ -8,9 +8,9 @@ export const createSong = (song) => {
   });
 };
 
-export const fetchSong = (id) => (
+export const fetchSong = (songId) => (
   $.ajax({
-    url:`api/songs/${id}`,
+    url:`api/songs/${songId}`,
     method:'GET'
   })
 );

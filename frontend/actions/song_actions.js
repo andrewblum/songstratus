@@ -38,5 +38,10 @@ export const uploadSong = (song) => dispatch => (
 
 export const fetchAllUsersSongs = (userId) => dispatch => (
   SongApiUtil.fetchAllUsersSongs(userId)
-  .then(songs => dispatch(receiveAllSongs(songs)))
+    .then(songs => dispatch(receiveAllSongs(songs)))
+);
+
+export const fetchSong = (songId) => dispatch => (
+  SongApiUtil.fetchSong(songId)
+    .then(song => dispatch(receiveSong(song)))
 );

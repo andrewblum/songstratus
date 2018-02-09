@@ -1,0 +1,244 @@
+.main-fullsong-view {
+
+}
+
+.main-fullsong-top {
+  height: 380px;
+  background-image: url("https://i.redd.it/ktcd0zq8gnd01.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 30px 20px 30px 30px;
+  margin-left: -30px;
+  margin-right: -30px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.main-fullsong-image-box {
+  position: relative;
+}
+
+.main-fullsong-image {
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.main-fullsong-title-box {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 750px;
+}
+
+.large-song-button {
+  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  background-size: 40% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f50;
+  border-radius: 50%;
+}
+
+.large-song-button:hover {
+  cursor: pointer;
+  background-color: #f30;
+}
+
+.large-song-play {
+  background-position: 60% center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDcgMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBsYXkgMjQ8L3RpdGxlPjxwYXRoIGQ9Ik0wIDEybDEuNjE1LTZMMCAwbDcgNi03IDZ6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+}
+.large-song-pause {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDggMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlPlBhdXNlIDI4PC90aXRsZT48cGF0aCBkPSJNNSAwdjEyaDNWMEg1ek0wIDB2MTJoM1YwSDB6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+}
+
+
+.main-fullsong-artist-and-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-fullsong-title {
+  background-color: rgba(0,0,0,.8);
+  font-size: 24px;
+  line-height: 37px;
+  padding: 4px 7px;
+  font-weight: 100;
+  color: #fff;
+  box-sizing: border-box;
+  max-height: 37px;
+  display: flex;
+  align-items: center;
+}
+
+.main-fullsong-artist {
+  margin-bottom: 5px;
+}
+
+.main-fullsong-artist a:hover {
+  color: #fff;
+}
+
+.main-fullsong-artist a {
+  background-color: rgba(0,0,0,.8);
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 2px 7px;
+  font-weight: 100;
+  color: #ccc;
+  box-sizing: border-box;
+}
+
+.main-fullsong-left-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-fullsong-tags-box {
+  font-size: 16px;
+  color: #fff;
+}
+
+.main-fullsong-artist-and-title-box {
+  display: flex;
+}
+
+.main-fullsong-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-fullsong-bottom-nav {
+  padding-top: 20px;
+  border-bottom: 1px solid #f2f2f2;
+  height: 32px;
+  color: #333;
+  font-size: 18px;
+}
+
+.add-comment-box {
+  background-color: #f2f2f2;
+  height: 40px;
+  padding: 5px 5px 5px 0px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.add-comment-user-img-box {
+  display: flex;
+  margin-right: 7px;
+}
+
+.add-comment-user-img {
+  width: 40px;
+  height: 40px;
+
+}
+
+.add-comment-box-focus {
+  // dynmically add and remove this class!!!
+  background-color: #e5e5e5;
+  border-color: #ccc;
+}
+
+.add-comment-input {
+  height: 27px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 9px;
+}
+
+.add-comment-input:focus {
+  border-color: #999;
+}
+
+
+
+
+
+
+.main-fullsong-bottom-content-box {
+  display: flex;
+  flex-flow: row;
+}
+
+.main-fullsong-bottom-content {
+  margin-top: 20px;
+  padding-right: 30px;
+  border-right: 1px solid #f2f2f2;
+  width: 850px;
+  padding-bottom: 20px;
+}
+
+.main-fullsong-sidebar {
+  margin-top: 20px;
+  padding-left: 30px;
+  width: 300px;
+}
+
+.main-fullsong-comments-box {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #f2f2f2;
+  margin-top: 25px;
+  padding-top: 20px;
+}
+
+.main-fullsong-comments-left-box {
+  width: 120px;
+  height: 250px;
+  background-color: yellow;
+}
+
+.main-fullsong-comments-right-box {
+  background-color: green;
+  display: flex;
+}
+
+.main-fullsong-waveform-box {
+  height: 110px;
+  box-sizing: border-box;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.main-fullsong-waveform-box:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.playing-focus {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.medium-profile-image-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.fullsong-comment-artist-name a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 100;
+  margin-top: 5px;
+}

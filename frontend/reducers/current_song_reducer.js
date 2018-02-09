@@ -9,7 +9,7 @@ let _nullState = {
   song:{
   id: -1,
   audio_url: "//:0",
-  image_url: "//:0"
+  image_url: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif"
   }
 };
 

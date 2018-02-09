@@ -16,9 +16,17 @@ class Api::UsersController < ApplicationController
     render "/api/users/show"
   end
 
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    @user.save
+    render "/api/users/show"
+  end
+
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password,
+      :description, :profile_image, :banner_image)
   end
 
 end

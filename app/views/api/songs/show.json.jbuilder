@@ -1,4 +1,10 @@
-json.audio_url song.audio.url
-json.title song.title
-json.artist song.artist
-json.image_url song.image.url
+json.id @song.id
+json.artist @song.artist
+json.title @song.title
+json.user_id @song.user_id
+json.image_url @song.image.url
+json.audio_url @song.audio.url
+json.description @song.description
+json.created_at @song.created_at
+json.genre @song.genre
+json.play_count @song.play_count
