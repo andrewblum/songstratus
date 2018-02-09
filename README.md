@@ -25,11 +25,14 @@ Comment on tracks
 
 ## Continous Media Playback 
 
+<img src="https://i.imgur.com/r4NicH1.jpg"/>
+
   To provide persistent playback, a slice of the global store was created that holds the currently playing track. This slice of state can be updated by other views to control things such as pausing, seeking, and changing tracks. 
   
 ## Waveform Generation 
  
- 
+## Comments 
+
 
 
 ## Full List of Libraries and Tools Used    
