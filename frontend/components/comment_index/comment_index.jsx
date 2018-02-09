@@ -4,7 +4,6 @@ import CommentContainer from '../comment/comment_container';
 class CommentIndex extends React.Component {
   componentDidMount() {
     this.props.fetchSongsComments(this.props.match.params.songId);
-    console.log(this.props.state);
   }
 
   render() {

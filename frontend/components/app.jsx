@@ -16,8 +16,8 @@ const App = () => (
 
     <main className="main-content">
       <div className="main-content-box">
-        <ProtectedRoute exact path="/:userId" component={UserContainer}/>
-        <ProtectedRoute exact path="/:userId/:songId" component={FullSongContainer}/>
+        <Route exact path="/:userId" component={UserContainer}/>
+        <Route exact path="/:userId/:songId" component={FullSongContainer}/>
       </div>
     </main>
 
@@ -25,8 +25,8 @@ const App = () => (
       <PlayControlsContainer/>
     </footer>
 
-    <AuthRoute exact path="/signup" component={SessionFormContainer}/>
-    <AuthRoute exact path="/login" component={SessionFormContainer}/>
+    <AuthRoute path="/signup" component={SessionFormContainer}/>
+    <AuthRoute path="/login" component={SessionFormContainer}/>
     <ProtectedRoute exact path="/upload" component={UploadFormContainer}/>
   </div>
 );

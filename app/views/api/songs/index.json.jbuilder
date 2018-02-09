@@ -9,5 +9,6 @@
     json.audio_url song.audio.url
     json.play_count song.play_count
     json.num_comments song.num_comments
+    json.description song.description
   end
 end

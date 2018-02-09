@@ -23,8 +23,8 @@ class FullSong extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.state);
-    this.props.fetchSong(this.props.match.params.songId);
+    this.props.fetchSong(this.props.match.params.songId)
+      .then((song) => this.props.fetchUser(this.props.song.user_Id));
     this.props.fetchUser(this.props.match.params.userId);
   }
 
@@ -68,7 +68,7 @@ class FullSong extends React.Component {
   }
 
   render() {
-    if (!this.props.song || !this.props.user) {
+    if (!this.props.song || !this.props.pathUser ) {
       return (<div>Loading...</div>);
     }
     return (
@@ -139,12 +139,12 @@ class FullSong extends React.Component {
                   <Link to={`/${this.props.song.user_id}`}>
                     <img
                       className="medium-profile-image-circle"
-                      src={this.props.user.profile_image_url}>
+                      src={this.props.users[this.props.song.user_id].profile_image_url}>
                     </img>
                   </Link>
                   <div className="fullsong-comment-artist-name">
                     <Link to={`/${this.props.song.user_id}`}>
-                      {this.props.user.username}
+                      {this.props.pathUser.username}
                     </Link>
                   </div>
                 </div>

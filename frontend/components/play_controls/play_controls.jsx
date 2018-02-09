@@ -70,7 +70,6 @@ class PlayControls extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.song.id !== newProps.song.id) {
-      console.log('SETTING SEEK TO 0');
       this.setState({url: newProps.song.audio_url},
                     () => this.player.seekTo(0.0));
     }

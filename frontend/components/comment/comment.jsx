@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class Comment extends React.Component {
 
   render() {
-    console.log(this.props.comment);
     return (
       <div className="comment-box">
         <div className="comment-left">

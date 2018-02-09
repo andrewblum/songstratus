@@ -65,7 +65,6 @@ class Song extends React.Component {
     return (
 
       <div className="main-user-view">
-
         <div className="main-user-top">
           <div className="main-user-image-box">
             {this.profileImageUploadButton()}
@@ -79,7 +78,6 @@ class Song extends React.Component {
             </div>
           </div>
         </div>
-
         <div className="main-user-bottom">
           <div className="main-user-bottom-nav">
             Tracks
@@ -89,12 +87,10 @@ class Song extends React.Component {
               <SongIndexContainer/>
             </div>
             <div className="main-user-sidebar">
-              Sidebar
+              {this.props.user.description}
             </div>
           </div>
         </div>
-
-
       </div>
     );
   }

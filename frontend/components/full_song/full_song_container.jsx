@@ -6,14 +6,16 @@ import { fetchSong,
          playPause,
          receiveCurrentSong } from '../../actions/song_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  song: state.entities.songs[ownProps.match.params.songId],
-  currentSong: state.currentSong,
-  playing: state.currentSong.playing,
-  user: state.entities.users[ownProps.match.params.userId],
-  currentUser: state.session.currentUser,
-  state
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    song: state.entities.songs[ownProps.match.params.songId],
+    currentSong: state.currentSong,
+    playing: state.currentSong.playing,
+    pathUser: state.entities.users[ownProps.match.params.userId],
+    currentUser: state.session.currentUser,
+    users: state.entities.users
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
