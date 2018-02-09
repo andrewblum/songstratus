@@ -1,22 +1,6 @@
-# README
-
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
 # Song Stratus
 
-Song Stratus is a implementation of core SoundCloud features developed over a 10 day period from scratch. The main tools used were Rails, Ruby, PostgreSQL, React.js, Redux, JavaScript and AWS S3 storage. This project is under active development and new features will continue to be added. 
+Song Stratus is a implementation of core SoundCloud features developed over a 10 day period from scratch. The main tools used were Rails, PostgreSQL, React.js, Redux, and AWS S3 storage. This project is under active development and new features will continue to be added. 
 
 ## Features 
 
@@ -61,3 +45,13 @@ Comment on tracks
 | Node 6.10.1   | PostgreSQL 10.1  |
 | JBuilder 2.5   | BCrypt 3.1.7  |
 | AWS S3 SDK 2.9 |  |
+
+## Future Features 
+* Comments attatched to the time in the song play back they were made and rendered over the waveform 
+* Acurate loading progress bar that monitors XHR traffic 
+* Render waveform on the back end using a C library and preload as song data improve performance
+* Additional views to help with discovering music 
+* Likes and Follows 
+* Playlists 
+* Song visualizer
+* Dynamic Search 
