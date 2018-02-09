@@ -67,3 +67,14 @@ Comment on tracks
 
 
  
+|               |               |  
+| ------------- |:-------------:| 
+| Javascript 6 (ES 2015)     | Rails 5.1 | 
+|  Ruby 5.1.4    | React 16.2    |  
+| Paperclip 5.2.1 | Figaro 1.1.1   |  
+|React Player 1.1.1| Wavesurfer 1.4| 
+| Lodash 4.17.4 | NPM 5.6 | 
+| Babel 6.26 | Webpack 3.10 |
+| Node 6.10.1   | PostgreSQL 10.1  |
+| JBuilder 2.5   | BCrypt 3.1.7  |
+| AWS S3 SDK 2.9 |  |
