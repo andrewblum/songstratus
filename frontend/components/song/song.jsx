@@ -93,7 +93,7 @@ class Song extends React.Component {
                 className="small-song-footer-comments-link"
                 to={`${this.props.track.user_id}/${this.props.track.id}`}>
                 <div className="small-song-footer-comments">
-                  0
+                  {this.props.track.num_comments}
                 </div>
               </Link>
 

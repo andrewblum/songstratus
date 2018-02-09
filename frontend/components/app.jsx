@@ -16,8 +16,8 @@ const App = () => (
 
     <main className="main-content">
       <div className="main-content-box">
-        <Route exact path="/:userId" component={UserContainer}/>
-        <Route exact path="/:userId/:songId" component={FullSongContainer}/>
+        <ProtectedRoute exact path="/:userId" component={UserContainer}/>
+        <ProtectedRoute exact path="/:userId/:songId" component={FullSongContainer}/>
       </div>
     </main>
 

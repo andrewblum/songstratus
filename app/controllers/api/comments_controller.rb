@@ -1,6 +1,9 @@
 class Api::CommentsController < ApplicationController
 
   def create
+    @song = Song.find_by_id(comment_params[:song_id])
+    @song.num_comments += 1
+    @song.save
     @comment = Comment.new(comment_params)
     @comment.save
     render "api/comments/show"

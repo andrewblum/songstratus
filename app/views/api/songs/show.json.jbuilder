@@ -9,3 +9,4 @@ json.description @song.description
 json.created_at time
 json.genre @song.genre
 json.play_count @song.play_count
+json.num_comments @song.num_comments
