@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentContainer from '../comment/comment_container';
+import NoComments from '../no_comments/no_comments';
 
 class CommentIndex extends React.Component {
   componentDidMount() {
@@ -7,11 +8,11 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.comments) {
+    console.log(this.props.comments);
+    if (Object.keys(this.props.comments) == 0) {
       return(
-        <div>
-          <img src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"></img>
-        </div>);
+        <NoComments/>
+        );
     } else {
       let comments = [];
       Object.keys(this.props.comments).forEach(each => {
