@@ -46,7 +46,7 @@ class User extends React.Component {
   }
 
   profileImageUploadButton() {
-    if (this.props.currentUser.id == this.props.match.params.userId) {
+    if (this.props.currentUser && this.props.currentUser.id == this.props.match.params.userId) {
       return (
         <div className="update-profile-image-button-box">
           <div className="update-profile-image-camera" />
