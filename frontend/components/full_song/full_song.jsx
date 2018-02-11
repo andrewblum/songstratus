@@ -20,6 +20,7 @@ class FullSong extends React.Component {
     };
     this.onPlayPause = this.onPlayPause.bind(this);
     this.submitComment = this.submitComment.bind(this);
+    this.currentUserPhoto = this.currentUserPhoto.bind(this);
   }
 
   componentDidMount() {
@@ -65,6 +66,22 @@ class FullSong extends React.Component {
       playPause: "large-song-button large-song-play",
       playingFocused: ''
     });
+  }
+
+  currentUserPhoto() {
+    if (this.props.currentUser) {
+      return (
+        <img
+          className="add-comment-user-img"
+          src={this.props.currentUser.profile_image_url}>
+        </img>
+      );
+    } else {
+      return (
+        <div className="add-comment-user-img default-user-picture">
+        </div>
+      );
+    }
   }
 
   render() {
@@ -120,10 +137,7 @@ class FullSong extends React.Component {
             <div className="main-fullsong-bottom-content">
               <div className="add-comment-box">
                 <div className="add-comment-user-img-box">
-                  <img
-                    className="add-comment-user-img"
-                    src={this.props.currentUser.profile_image_url}>
-                  </img>
+                  {this.currentUserPhoto()}
                 </div>
                 <input
                   className='add-comment-input'
