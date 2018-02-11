@@ -1,7 +1,7 @@
 import React from 'react';
 import SongIndexContainer from '../song_index/song_index_container';
 
-class Song extends React.Component {
+class User extends React.Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -17,6 +17,13 @@ class Song extends React.Component {
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId)
       .then(user => this.setState({profileImageUrl: user.profile_image_url}));
+  }
+
+  componentWillReceiveProps(newProps)  {
+    if (this.props.match.params.userId !== newProps.match.params.userId) {
+    this.props.fetchUser(newProps.match.params.userId)
+      .then(user => this.setState({profileImageUrl: newProps.user.profile_image_url}));
+    }
   }
 
   updateImage(e) {
@@ -96,4 +103,4 @@ class Song extends React.Component {
   }
 }
 
-export default Song;
+export default User;

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   root 'static_pages#root'
+
+  # global options responder -> makes sure OPTION request for CORS endpoints work
+  match '*path', via: [:options], to: lambda {|_| [204, { 'Content-Type' => 'text/plain' }]}
+
   namespace :api, defaults: {format: :json} do
     resources :songs, only: [:create, :destroy, :update, :show] do
       resources :comments, only: [:create, :destroy, :index]

@@ -24,7 +24,7 @@ class FullSong extends React.Component {
 
   componentDidMount() {
     this.props.fetchSong(this.props.match.params.songId)
-      .then((song) => this.props.fetchUser(this.props.song.user_Id));
+      .then((song) => this.props.fetchUser(this.props.song.user_id));
     this.props.fetchUser(this.props.match.params.userId);
   }
 
