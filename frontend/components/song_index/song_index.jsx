@@ -12,10 +12,14 @@ class SongIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.tracks) {
+    console.log(this.props);
+    if (Object.keys(this.props.tracks).length == 0) {
       return(
-        <div>
-          <img src="https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif"></img>
+        <div className="no-songs-box">
+          <div className="no-songs-icon"></div>
+          <div className="no-songs-text">
+            Nothing to hear here
+          </div>
         </div>);
     } else {
       let songs = [];

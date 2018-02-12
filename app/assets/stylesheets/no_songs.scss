@@ -1,0 +1,21 @@
+.no-songs-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.no-songs-icon {
+  background-size: 240px 178px;
+  height: 178px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 240px;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/empty-states/stream@2x-fab0f85.png);
+}
+
+.no-songs-text {
+  margin-top: 14px;
+  font-size: 18px;
+}

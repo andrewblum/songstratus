@@ -166,7 +166,7 @@ import SessionFormContainer from '../session_form/session_form_container';
           <Link
             to="#"
             onClick={this.toggleSessionModal('signup')}>
-            Create Acount
+            Create Account
           </Link>
           {this.renderSessionModal()}
         </div>
