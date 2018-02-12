@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillUnmount() {
@@ -28,6 +29,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  demoLogin() {
+    const user = {username: "Slow Magic", password: "password"};
+    this.props.login(user);
   }
 
   navLink() {
@@ -80,6 +86,7 @@ class SessionForm extends React.Component {
                   onChange={this.update('password')}
                   placeholder="Your Password"
                 />
+
               <input
                 type="submit"
                 value={this.props.formType}
@@ -88,6 +95,14 @@ class SessionForm extends React.Component {
           </form>
           <div className="switch-forms-box">
             {this.navLink()}
+          </div>
+          <div className="demo-box">
+            <div className="demo-icon"></div>
+            <button
+              className="demo-button"
+              onClick={this.demoLogin}>
+              Log In
+            </button>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import UploadFormContainer from './upload_form/upload_form_container';
 import PlayControlsContainer from './play_controls/play_controls_container';
 import FullSongContainer from './full_song/full_song_container';
 import UserContainer from './user/user_container';
+import HomePage from './home_page/home_page';
 
 const App = () => (
   <div className="app">
@@ -16,6 +17,7 @@ const App = () => (
 
     <main className="main-content">
       <div className="main-content-box">
+        <Route exact path="/" component={HomePage}/>
         <Route exact path="/:userId" component={UserContainer}/>
         <Route exact path="/:userId/:songId" component={FullSongContainer}/>
       </div>

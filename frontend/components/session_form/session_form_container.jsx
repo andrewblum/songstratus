@@ -16,7 +16,8 @@ const mapDispatchToprops = (dispatch, ownProps) => {
   const processForm = ownProps.sessionType === 'login' ? login : signup;
   return {
     processForm: user => dispatch(processForm(user)),
-    clearSessionErrors: () => dispatch(clearSessionErrors())
+    clearSessionErrors: () => dispatch(clearSessionErrors()),
+    login: (user) => dispatch(login(user))
   };
 };
 
