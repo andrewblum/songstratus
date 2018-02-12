@@ -8,7 +8,6 @@ class CommentIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props.comments);
     if (Object.keys(this.props.comments) == 0) {
       return(
         <NoComments/>

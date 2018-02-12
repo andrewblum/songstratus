@@ -12,7 +12,6 @@ class SongIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (Object.keys(this.props.tracks).length == 0) {
       return(
         <div className="no-songs-box">
