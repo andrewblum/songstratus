@@ -13,6 +13,7 @@
 .play-controls {
   height: 100%;
   display: flex;
+  align-items: center;
 }
 
 .add-pointer:hover {
@@ -27,6 +28,7 @@
   outline: none;
   border: none;
   width: 24px;
+  height: 48px;
   background: url(https://a-v2.sndcdn.com/assets/images/playback/play-91b117d.svg) no-repeat;
   background-position: center;
 }
@@ -35,6 +37,7 @@
   outline: none;
   border: none;
   width: 24px;
+  height: 48px;
   background: url(https://a-v2.sndcdn.com/assets/images/playback/pause-b36fad6.svg) no-repeat;
   background-position: center;
 }
@@ -59,11 +62,36 @@
   margin-left: 10px;
 }
 
+.volume-box {
+  height: 46px;
+  display: flex;
+  margin-left: 40px;
+  align-items: center;
+  justify-content: center;
+}
 
+.volume-icon {
+  width: 24px;
+  height: 46px;
+  background-image: url(https://a-v2.sndcdn.com/assets/images/playback/volume-max-2831f71.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.volume-groove {
+  position: absolute;
+  height: 1px;
+  width: 70px;
+  background-color: #ccc;
+  left: 15px;
+}
 .volume {
 
 }
-
 
 .control-song-info-box {
   margin-left: 20px;
@@ -132,13 +160,14 @@ input[type=range]::-ms-track {
 .playback-slider-track {
   background-color: #ccc;
   height: 1px;
-  width: 512px;
+  width: 487px;
   position: absolute;
   top: 12.9px;
+  left: 15px;
 }
 
 //RANGE SLIDER STYLES
-input[type=range]:hover::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 8px;
   width: 8px;

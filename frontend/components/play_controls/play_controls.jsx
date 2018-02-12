@@ -118,6 +118,10 @@ class PlayControls extends React.Component {
             </div>
             </div>
             <div className="volume-box">
+              <div className="volume-icon"></div>
+              <div className="relative">
+                <div className="volume-groove"></div>
+              </div>
               <input
                 className="volume"
                 type='range' min={0} max={1} step='any'
