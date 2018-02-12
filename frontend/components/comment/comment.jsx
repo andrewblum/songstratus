@@ -3,6 +3,31 @@ import { Link } from 'react-router-dom';
 
 class Comment extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.props = props;
+    this.handleDelete = this.handleDelete.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
+  }
+
+  handleDelete() {
+    this.props.deleteComment(this.props.comment);
+  }
+
+  deleteComment() {
+    if (this.props.currentUser &&
+        this.props.currentUser.id == this.props.comment.user_id) {
+      return (
+        <div
+          onClick={this.handleDelete}
+          className="delete-comment">
+        </div>
+      );
+    } else {
+      return (<div></div>);
+    }
+  }
+
   render() {
     return (
       <div className="comment-box">
@@ -24,8 +49,13 @@ class Comment extends React.Component {
             </div>
           </div>
         </div>
-        <div className="comment-date">
-          {this.props.comment.created_at}
+        <div className="comment-meta">
+          <div className="comment-date">
+            {this.props.comment.created_at}
+          </div>
+          <div className="comment-controls">
+            {this.deleteComment()}
+          </div>
         </div>
       </div>
     );

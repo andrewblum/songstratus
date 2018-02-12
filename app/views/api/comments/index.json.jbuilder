@@ -1,6 +1,7 @@
 @comments.each do |comment|
   time = distance_of_time_in_words(comment.created_at, Time.now) + " ago"
   json.set! comment.id do
+    json.id comment.id
     json.body comment.body
     json.time comment.time
     json.created_at time
