@@ -62,6 +62,7 @@ import SessionFormContainer from '../session_form/session_form_container';
     }
 
     switchForms() {
+      this.props.clearSessionErrors();
       if (this.state.sessionModalType === 'login') {
           this.setState({sessionModalType: 'signup'});
       } else {
