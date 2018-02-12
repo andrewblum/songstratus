@@ -32,9 +32,13 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'Log In') {
-      return <Link to="/signup">Or Create an account instead.</Link>;
+      return <Link to="#"
+        onClick={this.props.switchForms}>
+        Or Create an account instead.</Link>;
     } else {
-      return <Link to="/login">Or Log In instead.</Link>;
+      return <Link to="#"
+        onClick={this.props.switchForms}>
+        Or Log In instead.</Link>;
     }
   }
 
@@ -57,10 +61,10 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="modal">
+      <div onClick={this.props.closeSessionModal} className="upload-modal">
+        <div onClick={this.props.closeSessionModal} className="upload-close-x"></div>
         <div className="login-form-container">
           <h3>{this.props.formType}</h3>
-          <Link to="/" className="close-modal">X</Link>
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-form">
                 {this.renderErrors()}
@@ -82,7 +86,9 @@ class SessionForm extends React.Component {
                 className="submit-session"/>
             </div>
           </form>
-          <h6>{this.navLink()}</h6>
+          <div className="switch-forms-box">
+            {this.navLink()}
+          </div>
         </div>
       </div>
     );

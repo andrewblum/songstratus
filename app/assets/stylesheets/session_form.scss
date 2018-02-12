@@ -46,6 +46,11 @@
   font-size: 18px;
 }
 
+.login-form .submit-session:hover {
+  cursor: pointer;
+  background-color: #f30;
+}
+
 h3 {
   padding: 30px 0 0 0;
   font-size: 24px;
@@ -53,9 +58,15 @@ h3 {
   justify-content: center;
 }
 
-h6 {
+.switch-forms-box a {
   display: flex;
   justify-content: center;
+  color: gray;
+}
+
+.switch-forms-box a:hover{
+  cursor: pointer;
+  color: black;
 }
 
 .close-modal {

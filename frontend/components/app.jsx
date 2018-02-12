@@ -25,8 +25,6 @@ const App = () => (
       <PlayControlsContainer/>
     </footer>
 
-    <AuthRoute path="/signup" component={SessionFormContainer}/>
-    <AuthRoute path="/login" component={SessionFormContainer}/>
     <ProtectedRoute exact path="/upload" component={UploadFormContainer}/>
   </div>
 );

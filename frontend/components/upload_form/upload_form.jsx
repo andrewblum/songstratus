@@ -55,7 +55,7 @@ class UploadForm extends React.Component {
     formData.append("song[audio]", this.state.audioFile);
     formData.append("song[title]", this.state.title);
     formData.append("song[user_id]", this.props.currentUser.id);
-    formData.append("song[description]", this.props.description);
+    formData.append("song[description]", this.state.description);
     this.props.uploadSong(formData);
   }
 

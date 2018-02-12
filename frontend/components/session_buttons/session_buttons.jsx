@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UploadFormContainer from '../upload_form/upload_form_container';
+import SessionFormContainer from '../session_form/session_form_container';
 
   class SessionButtons extends React.Component {
 
@@ -9,24 +10,37 @@ import UploadFormContainer from '../upload_form/upload_form_container';
       this.props = props;
       this.state = {
         uploadModalOpen: false,
-        userModalOpen: false
+        sessionModalOpen: false,
+        userModalOpen: false,
+        sessionModalType: null
       };
       this.loggedIn = this.loggedIn.bind(this);
       this.notLoggedIn = this.notLoggedIn.bind(this);
+      this.renderSessionModal = this.renderSessionModal.bind(this);
       this.renderUploadModal = this.renderUploadModal.bind(this);
       this.renderUserModal = this.renderUserModal.bind(this);
       this.toggleUserModal = this.toggleUserModal.bind(this);
       this.toggleUploadModal = this.toggleUploadModal.bind(this);
+      this.toggleSessionModal = this.toggleSessionModal.bind(this);
       this.closeUploadModal = this.closeUploadModal.bind(this);
       this.closeUserModal = this.closeUserModal.bind(this);
+      this.closeSessionModal = this.closeSessionModal.bind(this);
+      this.switchForms = this.switchForms.bind(this);
     }
 
-    toggleUserModal() {
-      this.setState({userModalOpen: !this.state.userModalOpen});
+    toggleSessionModal(sessionType) {
+      return (e) => (
+      this.setState({sessionModalOpen: !this.state.sessionModalOpen,
+         sessionModalType: sessionType})
+      );
     }
 
     toggleUploadModal() {
       this.setState({uploadModalOpen: !this.state.uploadModalOpen});
+    }
+
+    toggleUserModal() {
+      this.setState({userModalOpen: !this.state.userModalOpen});
     }
 
     closeUploadModal(e) {
@@ -35,8 +49,36 @@ import UploadFormContainer from '../upload_form/upload_form_container';
       }
     }
 
-    closeUserModal() {
-      this.setState({userModalOpen: false});
+    closeSessionModal(e) {
+      if (e.target === e.currentTarget) {
+        this.setState({sessionModalOpen: false});
+      }
+    }
+
+    closeUserModal(e) {
+      if (e.target === e.currentTarget) {
+        this.setState({userSessionOpen: false});
+      }
+    }
+
+    switchForms() {
+      if (this.state.sessionModalType === 'login') {
+          this.setState({sessionModalType: 'signup'});
+      } else {
+        this.setState({sessionModalType: 'login'});
+      }
+    }
+
+    renderSessionModal() {
+      if (this.state.sessionModalOpen) {
+        return (
+          <SessionFormContainer
+            switchForms={this.switchForms}
+            sessionType={this.state.sessionModalType}
+            closeSessionModal={this.closeSessionModal}/>
+        );
+      }
+      return (<div></div>);
     }
 
     renderUploadModal() {
@@ -46,6 +88,12 @@ import UploadFormContainer from '../upload_form/upload_form_container';
         );
       }
       return (<div></div>);
+    }
+
+    componentWillReceiveProps(newProps) {
+      if (newProps.currentUser) {
+        this.setState({sessionModalOpen: false});
+      }
     }
 
     renderUserModal() {
@@ -109,8 +157,17 @@ import UploadFormContainer from '../upload_form/upload_form_container';
     notLoggedIn() {
       return (
         <div>
-          <Link to="/login">Log In</Link>
-          <Link to="/signup">Create Acount</Link>
+          <Link
+            to="#"
+            onClick={this.toggleSessionModal('login')}>
+            Log In
+          </Link>
+          <Link
+            to="#"
+            onClick={this.toggleSessionModal('signup')}>
+            Create Acount
+          </Link>
+          {this.renderSessionModal()}
         </div>
       );
     }
