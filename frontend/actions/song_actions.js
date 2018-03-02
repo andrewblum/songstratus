@@ -8,6 +8,7 @@ export const SET_PLAYED = 'SET_PLAYED';
 export const SET_FETCH_PLAY_TIME_FOR_COMMENT = "SET_FETCH_PLAY_TIME_FOR_COMMENT";
 export const SET_PLAY_TIME_FOR_COMMENT = "SET_PLAY_TIME_FOR_COMMENT";
 export const RECEIVE_PLAY_TIME_FOR_COMMENT = "RECEIVE_PLAY_TIME_FOR_COMMENT";
+export const SET_SEEK_PLAYER_TO = "SET_SEEK_PLAYER_TO";
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -41,6 +42,11 @@ export const setFetchPlayTimeForComment = (flag) => ({
 
 export const setPlayTimeForComment = (time) => ({
   type: RECEIVE_PLAY_TIME_FOR_COMMENT,
+  time
+});
+
+export const setSeekPlayerTo = (time) => ({
+  type: SET_SEEK_PLAYER_TO,
   time
 });
 

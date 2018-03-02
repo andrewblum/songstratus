@@ -79,6 +79,11 @@ class PlayControls extends React.Component {
       this.props.setFetchPlayTimeForComment(false);
       this.props.setPlayTimeForComment(Math.round(this.state.duration * this.state.played));
     }
+    if (newProps.seekPlayerTo != this.props.seekPlayerTo) {
+      this.player.seekTo(parseFloat(newProps.seekPlayerTo));
+      this.setState({played: parseFloat(newProps.seekPlayerTo)});
+      this.props.setPlayed(parseFloat(newProps.seekPlayerTo));
+    }
   }
 
   render () {

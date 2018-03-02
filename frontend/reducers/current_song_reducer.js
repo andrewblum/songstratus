@@ -4,7 +4,8 @@ import { RECEIVE_CURRENT_SONG,
          SET_PLAYED,
          SET_FETCH_PLAY_TIME_FOR_COMMENT,
          SET_PLAY_TIME_FOR_COMMENT,
-         RECEIVE_PLAY_TIME_FOR_COMMENT } from '../actions/song_actions';
+         RECEIVE_PLAY_TIME_FOR_COMMENT,
+         SET_SEEK_PLAYER_TO } from '../actions/song_actions';
 
 let _nullState = {
   playing: false,
@@ -38,6 +39,9 @@ const currentSongReducer = (state = _nullState, action) => {
       return newState;
     case RECEIVE_PLAY_TIME_FOR_COMMENT:
       newState = merge({}, state, { playTimeForComment: action.time });
+      return newState;
+    case SET_SEEK_PLAYER_TO:
+      newState = merge({}, state, { seekPlayerTo: action.time });
       return newState;
     default:
       return state;

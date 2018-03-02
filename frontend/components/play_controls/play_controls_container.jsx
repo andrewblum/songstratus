@@ -10,7 +10,8 @@ const mapStateToProps = (state) => ({
   song: state.currentSong.song,
   playing: state.currentSong.playing,
   fetchPlayTimeForComment: state.currentSong.fetchPlayTimeForComment,
-  commentTime: state.currentSong.commentTime
+  commentTime: state.currentSong.commentTime,
+  seekPlayerTo: state.currentSong.seekPlayerTo
 });
 
 const mapDispatchToProps = (dispatch) => ({

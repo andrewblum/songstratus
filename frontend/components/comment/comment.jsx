@@ -8,6 +8,7 @@ class Comment extends React.Component {
     this.props = props;
     this.handleDelete = this.handleDelete.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
+    this.handleSeek = this.handleSeek.bind(this);
   }
 
   handleDelete() {
@@ -36,6 +37,10 @@ class Comment extends React.Component {
     );
   }
 
+  handleSeek(e) {
+    this.props.setSeekPlayerTo(this.props.comment.time);
+  }
+
   render() {
     return (
       <div className="comment-box">
@@ -52,7 +57,9 @@ class Comment extends React.Component {
                 {this.props.comment.username}
               </Link>
               <span>at</span>
-              <div className="comment-time">
+              <div
+                onClick={this.handleSeek}
+                className="comment-time">
                 {this.formatTime(this.props.comment.time)}
               </div>
             </div>

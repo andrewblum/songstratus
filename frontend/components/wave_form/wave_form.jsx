@@ -14,7 +14,6 @@ class WaveForm extends React.Component {
     } else {
       this.wavesurfer.pause();
     }
-
   }
 
   componentDidMount() {
@@ -30,6 +29,11 @@ class WaveForm extends React.Component {
     this.wavesurfer.load(this.props.track.audio_url);
     this.wavesurfer.setMute(true);
     this.wavesurfer.on('seek', e => this.props.setPlayed(e));
+    this.wavesurfer.on('seek', e => {
+      if (this.props.track.id === this.props.song.id) {
+        this.props.setSeekPlayerTo(e);
+      }
+    });
   }
 
   render () {
