@@ -1,4 +1,5 @@
 import React from 'react';
+import WaveSurfer from 'wavesurfer.js';
 
 class WaveForm extends React.Component {
 

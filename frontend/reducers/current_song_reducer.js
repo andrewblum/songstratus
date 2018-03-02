@@ -14,7 +14,11 @@ let _nullState = {
   id: -1,
   audio_url: "//:0",
   image_url: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif"
-  }
+  },
+  fetchPlayTimeForComment: false,
+  playTimeForComment: 0,
+  seekPlayerTo: 0,
+  seekWaveformTo: 0
 };
 
 const currentSongReducer = (state = _nullState, action) => {
