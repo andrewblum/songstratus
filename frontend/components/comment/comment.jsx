@@ -28,6 +28,14 @@ class Comment extends React.Component {
     }
   }
 
+  formatTime(seconds) {
+    var date = new Date(null);
+    date.setSeconds(seconds);
+    return (
+      date.toTimeString().slice(4, 9)
+    );
+  }
+
   render() {
     return (
       <div className="comment-box">
@@ -43,7 +51,12 @@ class Comment extends React.Component {
               <Link to={`/${this.props.comment.user_id}`}>
                 {this.props.comment.username}
               </Link>
+              <span>at</span>
+              <div className="comment-time">
+                {this.formatTime(this.props.comment.time)}
+              </div>
             </div>
+
             <div className="comment-body">
               {this.props.comment.body}
             </div>

@@ -75,6 +75,10 @@ class PlayControls extends React.Component {
     }
     if (!newProps.playing) this.setState({playpause: 'play add-pointer'});
     if (newProps.playing) this.setState({playpause: 'pause add-pointer'});
+    if (newProps.fetchPlayTimeForComment) {
+      this.props.setFetchPlayTimeForComment(false);
+      this.props.setPlayTimeForComment(Math.round(this.state.duration * this.state.played));
+    }
   }
 
   render () {

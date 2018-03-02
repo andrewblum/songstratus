@@ -5,6 +5,9 @@ export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_CURRENT_SONG = "RECEIVE_CURRENT_SONG";
 export const PLAY_PAUSE = 'PLAY_PAUSE';
 export const SET_PLAYED = 'SET_PLAYED';
+export const SET_FETCH_PLAY_TIME_FOR_COMMENT = "SET_FETCH_PLAY_TIME_FOR_COMMENT";
+export const SET_PLAY_TIME_FOR_COMMENT = "SET_PLAY_TIME_FOR_COMMENT";
+export const RECEIVE_PLAY_TIME_FOR_COMMENT = "RECEIVE_PLAY_TIME_FOR_COMMENT";
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -29,6 +32,16 @@ export const playPause = (bool) => ({
 export const setPlayed = (float) => ({
   type: SET_PLAYED,
   float
+});
+
+export const setFetchPlayTimeForComment = (flag) => ({
+  type: SET_FETCH_PLAY_TIME_FOR_COMMENT,
+  flag
+});
+
+export const setPlayTimeForComment = (time) => ({
+  type: RECEIVE_PLAY_TIME_FOR_COMMENT,
+  time
 });
 
 export const uploadSong = (song) => dispatch => (

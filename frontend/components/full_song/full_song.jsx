@@ -21,6 +21,7 @@ class FullSong extends React.Component {
     this.onPlayPause = this.onPlayPause.bind(this);
     this.submitComment = this.submitComment.bind(this);
     this.currentUserPhoto = this.currentUserPhoto.bind(this);
+    this.setFetchPlayTimeForComment = this.setFetchPlayTimeForComment.bind(this)
   }
 
   componentDidMount() {
@@ -45,11 +46,17 @@ class FullSong extends React.Component {
     if (e.key === 'Enter') {
       this.props.createComment({
         body: this.state.comment.body,
+        time: this.props.playTimeForComment,
         user_id: this.props.currentUser.id,
         song_id: this.props.song.id
       });
+      console.log(this.state);
       this.setState({comment:{body: "", time: null}});
     }
+  }
+
+  setFetchPlayTimeForComment() {
+    this.props.setFetchPlayTimeForComment(true);
   }
 
   updateComment(type) {
@@ -66,6 +73,7 @@ class FullSong extends React.Component {
       playPause: "large-song-button large-song-play",
       playingFocused: ''
     });
+    this.setState({ comment: { time: newProps.playTimeForComment }});
   }
 
   currentUserPhoto() {
@@ -145,6 +153,7 @@ class FullSong extends React.Component {
                   placeholder="Write a comment"
                   onKeyPress={this.submitComment}
                   value={this.state.comment.body}
+                  onFocus={this.setFetchPlayTimeForComment}
                   onChange={this.updateComment('body')}
                 />
               </div>
