@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import { receiveCurrentSong,
-         playPause, setPlayed,
+         playPause,
          setFetchPlayTimeForComment,
-         setPlayTimeForComment } from '../../actions/song_actions';
+         setPlayTimeForComment,
+         setSeekWaveformTo } from '../../actions/song_actions';
 
 import PlayControls from './play_controls';
 
@@ -17,9 +18,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   receiveCurrentSong: (song) => dispatch(receiveCurrentSong(song)),
   playPause: (bool) => dispatch(playPause(bool)),
-  setPlayed: (float) => dispatch(setPlayed(float)),
   setFetchPlayTimeForComment: (flag) => dispatch(setFetchPlayTimeForComment(flag)),
   setPlayTimeForComment: (time) => dispatch(setPlayTimeForComment(time)),
-});
+  setSeekWaveformTo: (time) => dispatch(setSeekWaveformTo(time))
+ });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayControls);

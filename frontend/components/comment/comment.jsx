@@ -39,6 +39,7 @@ class Comment extends React.Component {
 
   handleSeek(e) {
     this.props.setSeekPlayerTo(this.props.comment.time);
+    this.props.setSeekWaveformTo(this.props.comment.time);
   }
 
   render() {

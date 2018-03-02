@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import WaveForm from './wave_form';
-import { setPlayed, setSeekPlayerTo } from '../../actions/song_actions';
+import { setSeekPlayerTo } from '../../actions/song_actions';
 
 const mapStateToProps = (state) => ({
   song: state.currentSong.song,
   playing: state.currentSong.playing,
   played: state.currentSong.played,
+  seekWaveformTo: state.currentSong.seekWaveformTo
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setPlayed: (float) => dispatch(setPlayed(float)),
   setSeekPlayerTo: (time) => dispatch(setSeekPlayerTo(time))
 });
 

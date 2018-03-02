@@ -44,12 +44,12 @@ class PlayControls extends React.Component {
   seekUnclick(e) {
     this.setState({inSeek: false});
     this.player.seekTo(parseFloat(e.target.value));
-    this.props.setPlayed(parseFloat(e.target.value));
+    this.props.setSeekWaveformTo(parseFloat(e.target.value));
   }
 
   seekChange(e) {
     this.setState({played: parseFloat(e.target.value)});
-    this.props.setPlayed(parseFloat(e.target.value));
+    this.props.setSeekWaveformTo(parseFloat(e.target.value));
   }
 
   onProgress(state) {
@@ -82,7 +82,6 @@ class PlayControls extends React.Component {
     if (newProps.seekPlayerTo != this.props.seekPlayerTo) {
       this.player.seekTo(parseFloat(newProps.seekPlayerTo));
       this.setState({played: parseFloat(newProps.seekPlayerTo)});
-      this.props.setPlayed(parseFloat(newProps.seekPlayerTo));
     }
   }
 

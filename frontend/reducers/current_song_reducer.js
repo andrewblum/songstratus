@@ -1,11 +1,11 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_SONG,
          PLAY_PAUSE,
-         SET_PLAYED,
          SET_FETCH_PLAY_TIME_FOR_COMMENT,
          SET_PLAY_TIME_FOR_COMMENT,
          RECEIVE_PLAY_TIME_FOR_COMMENT,
-         SET_SEEK_PLAYER_TO } from '../actions/song_actions';
+         SET_SEEK_PLAYER_TO,
+         SET_SEEK_WAVEFORM_TO } from '../actions/song_actions';
 
 let _nullState = {
   playing: false,
@@ -27,9 +27,6 @@ const currentSongReducer = (state = _nullState, action) => {
     case PLAY_PAUSE:
       newState = merge({}, state, { playing: action.bool });
       return newState;
-    case SET_PLAYED:
-      newState = merge({}, state, { played: action.float });
-      return newState;
     case SET_FETCH_PLAY_TIME_FOR_COMMENT:
       if (action.flag) {
         newState = merge({}, state, { fetchPlayTimeForComment: true});
@@ -42,6 +39,9 @@ const currentSongReducer = (state = _nullState, action) => {
       return newState;
     case SET_SEEK_PLAYER_TO:
       newState = merge({}, state, { seekPlayerTo: action.time });
+      return newState;
+    case SET_SEEK_WAVEFORM_TO:
+      newState = merge({}, state, { seekWaveformTo: action.time });
       return newState;
     default:
       return state;

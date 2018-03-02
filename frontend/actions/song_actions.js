@@ -4,11 +4,11 @@ export const RECEIVE_SONG = 'RECEIVE_SONG';
 export const RECEIVE_ALL_SONGS = 'RECEIVE_ALL_SONGS';
 export const RECEIVE_CURRENT_SONG = "RECEIVE_CURRENT_SONG";
 export const PLAY_PAUSE = 'PLAY_PAUSE';
-export const SET_PLAYED = 'SET_PLAYED';
 export const SET_FETCH_PLAY_TIME_FOR_COMMENT = "SET_FETCH_PLAY_TIME_FOR_COMMENT";
 export const SET_PLAY_TIME_FOR_COMMENT = "SET_PLAY_TIME_FOR_COMMENT";
 export const RECEIVE_PLAY_TIME_FOR_COMMENT = "RECEIVE_PLAY_TIME_FOR_COMMENT";
 export const SET_SEEK_PLAYER_TO = "SET_SEEK_PLAYER_TO";
+export const SET_SEEK_WAVEFORM_TO = "SET_SEEK_WAVEFORM_TO";
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -30,11 +30,6 @@ export const playPause = (bool) => ({
   bool
 });
 
-export const setPlayed = (float) => ({
-  type: SET_PLAYED,
-  float
-});
-
 export const setFetchPlayTimeForComment = (flag) => ({
   type: SET_FETCH_PLAY_TIME_FOR_COMMENT,
   flag
@@ -47,6 +42,11 @@ export const setPlayTimeForComment = (time) => ({
 
 export const setSeekPlayerTo = (time) => ({
   type: SET_SEEK_PLAYER_TO,
+  time
+});
+
+export const setSeekWaveformTo = (time) => ({
+  type: SET_SEEK_WAVEFORM_TO,
   time
 });
 

@@ -14,6 +14,14 @@ class WaveForm extends React.Component {
     } else {
       this.wavesurfer.pause();
     }
+    if (newProps.seekWaveformTo != this.props.seekWaveformTo
+        && newProps.song.id == newProps.track.id) {
+      let seek = newProps.seekWaveformTo;
+      if (newProps.seekWaveformTo > 1.0) {
+        seek = seek / this.wavesurfer.getDuration();
+      }
+      this.wavesurfer.seekTo(seek);
+    }
   }
 
   componentDidMount() {
@@ -28,7 +36,6 @@ class WaveForm extends React.Component {
     });
     this.wavesurfer.load(this.props.track.audio_url);
     this.wavesurfer.setMute(true);
-    this.wavesurfer.on('seek', e => this.props.setPlayed(e));
     this.wavesurfer.on('seek', e => {
       if (this.props.track.id === this.props.song.id) {
         this.props.setSeekPlayerTo(e);

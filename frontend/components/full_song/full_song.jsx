@@ -50,7 +50,6 @@ class FullSong extends React.Component {
         user_id: this.props.currentUser.id,
         song_id: this.props.song.id
       });
-      console.log(this.state);
       this.setState({comment:{body: "", time: null}});
     }
   }
