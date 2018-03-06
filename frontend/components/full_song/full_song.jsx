@@ -126,15 +126,17 @@ class FullSong extends React.Component {
                 {this.props.song.created_at}
               </div>
             </div>
-            <div className={`main-fullsong-waveform-box
-                            ${this.state.playingFocused}`}>
-              <WaveFormContainer
-                height={110}
-                track={this.props.song}
-                color={"#fff"}
-                />
+            <div className="relative-box">
+              <div className={`main-fullsong-waveform-box
+                              ${this.state.playingFocused}`}>
+                <WaveFormContainer
+                  height={110}
+                  track={this.props.song}
+                  color={"#fff"}
+                  />
+              </div>
+              <CommentOverlayContainer song={this.props.song.id}/>
             </div>
-            <CommentOverlayContainer song={this.props.song.id}/>
           </div>
             <div className="main-fullsong-image-box">
               <img

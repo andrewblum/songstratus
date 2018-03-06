@@ -9,6 +9,8 @@ export const SET_PLAY_TIME_FOR_COMMENT = "SET_PLAY_TIME_FOR_COMMENT";
 export const RECEIVE_PLAY_TIME_FOR_COMMENT = "RECEIVE_PLAY_TIME_FOR_COMMENT";
 export const SET_SEEK_PLAYER_TO = "SET_SEEK_PLAYER_TO";
 export const SET_SEEK_WAVEFORM_TO = "SET_SEEK_WAVEFORM_TO";
+export const SET_DURATION = "SET_DURATION";
+
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -47,6 +49,11 @@ export const setSeekPlayerTo = (time) => ({
 
 export const setSeekWaveformTo = (time) => ({
   type: SET_SEEK_WAVEFORM_TO,
+  time
+});
+
+export const setDuration = (time) => ({
+  type: SET_DURATION,
   time
 });
 

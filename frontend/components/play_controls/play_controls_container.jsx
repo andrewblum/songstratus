@@ -3,7 +3,8 @@ import { receiveCurrentSong,
          playPause,
          setFetchPlayTimeForComment,
          setPlayTimeForComment,
-         setSeekWaveformTo } from '../../actions/song_actions';
+         setSeekWaveformTo,
+         setDuration } from '../../actions/song_actions';
 
 import PlayControls from './play_controls';
 

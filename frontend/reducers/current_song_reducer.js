@@ -5,7 +5,8 @@ import { RECEIVE_CURRENT_SONG,
          SET_PLAY_TIME_FOR_COMMENT,
          RECEIVE_PLAY_TIME_FOR_COMMENT,
          SET_SEEK_PLAYER_TO,
-         SET_SEEK_WAVEFORM_TO } from '../actions/song_actions';
+         SET_SEEK_WAVEFORM_TO,
+         SET_DURATION } from '../actions/song_actions';
 
 let _nullState = {
   playing: false,
@@ -18,7 +19,8 @@ let _nullState = {
   fetchPlayTimeForComment: false,
   playTimeForComment: 0,
   seekPlayerTo: 0,
-  seekWaveformTo: 0
+  seekWaveformTo: 0,
+  duration: 0
 };
 
 const currentSongReducer = (state = _nullState, action) => {
@@ -46,6 +48,9 @@ const currentSongReducer = (state = _nullState, action) => {
       return newState;
     case SET_SEEK_WAVEFORM_TO:
       newState = merge({}, state, { seekWaveformTo: action.time });
+      return newState;
+    case SET_DURATION:
+      newState = merge({}, state, { duration: action.time });
       return newState;
     default:
       return state;

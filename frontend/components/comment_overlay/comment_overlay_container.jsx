@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
     return {
-      state: state,
+      duration: state.currentSong.duration,
       comments: songsComments
     };
 };
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchSongsComments: songId => dispatch(fetchSongsComments(songId))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentOverlay);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentOverlay));
