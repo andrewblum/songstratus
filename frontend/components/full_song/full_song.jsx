@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import WaveFormContainer from '../wave_form/wave_form_container';
 import CommentIndexContainer from '../comment_index/comment_index_container';
+import CommentOverlayContainer from '../comment_overlay/comment_overlay_container';
 
 class FullSong extends React.Component {
 
@@ -133,6 +134,7 @@ class FullSong extends React.Component {
                 color={"#fff"}
                 />
             </div>
+            <CommentOverlayContainer song={this.props.song.id}/>
           </div>
             <div className="main-fullsong-image-box">
               <img
