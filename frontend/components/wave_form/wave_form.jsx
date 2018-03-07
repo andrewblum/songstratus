@@ -1,12 +1,14 @@
 import React from 'react';
 import WaveSurfer from 'wavesurfer.js';
+import CommentOverlayContainer from '../comment_overlay/comment_overlay_container';
+
 
 class WaveForm extends React.Component {
 
   constructor(props) {
     super(props);
     this.props = props;
-    this.state = {};
+    this.state = {comments: ""};
   }
 
   componentWillReceiveProps(newProps) {
@@ -42,12 +44,20 @@ class WaveForm extends React.Component {
         this.props.setSeekPlayerTo(e);
       }
     });
+    this.wavesurfer.on('ready', e => {
+      if (this.props.displayComments) {
+        this.setState({comments: <CommentOverlayContainer
+                    duration={this.wavesurfer.getDuration()}
+                    song={this.props.song.id}/>}) ;
+      }
+    });
   }
 
   render () {
     return (
-      <div>
+      <div className="relative-box">
         <div id={`song-${this.props.track.id}-waveform`}></div>
+        { this.state.comments }
       </div>
     );
   }

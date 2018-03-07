@@ -14,11 +14,11 @@ class CommentOverlay extends React.Component {
   overlay() {
     let comments = [];
     Object.keys(this.props.comments).forEach(each => {
-      let pos = this.props.comments[each].time;
+      let pos = this.props.comments[each].time / this.props.duration;
       console.log(pos);
       comments.push(
         <div className="wave-form-comment"
-             style={{"left": pos}}
+             style={{"left": pos + "%"}}
              key={each}>
           <img src={this.props.comments[each].user_image}></img>
         </div>

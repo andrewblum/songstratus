@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
     return {
-      duration: state.currentSong.duration,
       comments: songsComments
     };
 };

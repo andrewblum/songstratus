@@ -75,6 +75,7 @@ class Song extends React.Component {
 
           <div className={`small-song-waveform ${this.state.playing_focused}`}>
             <WaveFormContainer
+              displayComments={false}
               track={this.props.track}
               height={60}
               color={"#666"}
