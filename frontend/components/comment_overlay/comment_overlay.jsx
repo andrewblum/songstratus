@@ -17,7 +17,7 @@ class CommentOverlay extends React.Component {
       let pos = parseInt((this.props.comments[each].time / this.props.duration) * 780);
       console.log(pos);
       comments.push(
-        <div className="wave-form-comment"
+        <div className="wave-form-comment fake-box"
              style={{marginLeft: pos + "px"}}
              key={each}>
           <img src={this.props.comments[each].user_image}></img>
