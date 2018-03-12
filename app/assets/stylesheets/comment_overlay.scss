@@ -24,4 +24,48 @@
 
 .wave-form-comment {
   position: absolute;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.wave-form-comment:hover {
+  overflow: visible;
+}
+
+.wave-form-comment-text {
+  position: absolute;
+  z-index: -1;
+  top: 55px;
+  display: flex;
+  width: auto;
+  size: 12px;
+}
+
+.wfct-arrow {
+  position: absolute;
+  height: 72px;
+  top: -56px;
+  left: -1px;
+  border-left: solid rgb(255, 85, 0) 1px;
+}
+
+.wfct-username {
+  color: rgb(255, 85, 0);
+  margin-right: 5px;
+  padding-left: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+.wfct-body {
+  color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.4);
+
 }

@@ -11,16 +11,25 @@ class CommentOverlay extends React.Component {
     this.props.fetchSongsComments(this.props.match.params.songId);
   }
 
+
   overlay() {
     let comments = [];
     Object.keys(this.props.comments).forEach(each => {
       let pos = parseInt((this.props.comments[each].time / this.props.duration) * 780);
-      console.log(pos);
       comments.push(
-        <div className="wave-form-comment fake-box"
+        <div className="wave-form-comment"
              style={{marginLeft: pos + "px"}}
              key={each}>
           <img src={this.props.comments[each].user_image}></img>
+          <div className="wave-form-comment-text">
+            <div className="wfct-arrow"></div>
+            <div className="wfct-username">
+              {this.props.comments[each].username}
+            </div>
+            <div className="wfct-body">
+              {this.props.comments[each].body}
+            </div>
+          </div>
         </div>
       );
     });
