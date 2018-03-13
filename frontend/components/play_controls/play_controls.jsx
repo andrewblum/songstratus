@@ -119,7 +119,10 @@ class PlayControls extends React.Component {
                   onChange={this.seekChange}
                 />
                 <div className="playback-slider-track"></div>
-
+                <div
+                  className="playback-progress"
+                  style={{"width": this.state.played * 487}}>
+                </div>
               </div>
             <div className="song-progress-length">
               {this.formatTime(Math.round(this.state.duration))}

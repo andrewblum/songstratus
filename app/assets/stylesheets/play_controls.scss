@@ -88,6 +88,7 @@
   width: 70px;
   background-color: #ccc;
   left: 15px;
+  top: 1px;
 }
 .volume {
 
@@ -159,6 +160,15 @@ input[type=range]::-ms-track {
 
 .playback-slider-track {
   background-color: #ccc;
+  height: 1px;
+  width: 487px;
+  position: absolute;
+  top: 12.9px;
+  left: 15px;
+}
+
+.playback-progress {
+  background-color: #f50;
   height: 1px;
   width: 487px;
   position: absolute;
