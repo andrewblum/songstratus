@@ -14,7 +14,6 @@ class HomePage extends React.Component {
   }
 
   splash() {
-    console.log(this.props.tracks);
     if (!this.props.currentUser) {
       return (
         <div className="home-page-box">
@@ -27,20 +26,29 @@ class HomePage extends React.Component {
         </div>
       );
     }
+    return (<div></div>)
+  }
+
+
+
+  render() {
+    let songs = [];
     if (this.props.tracks.length == 0) {
       return(
         <div className="loading-home-songs">
           LOADING...
         </div>);
     } else {
-      let songs = [];
       this.props.tracks.forEach(each => {
         songs.push(<SongContainer
                     key={each.id}
                     track={each}/>
                   );
       });
-      return (
+    }
+    return (
+      <div>
+        { this.splash() }
         <div className="home-bottom">
           <div className="home-tracks">
             { songs }
@@ -51,15 +59,6 @@ class HomePage extends React.Component {
             <div className="home-side-sub">2018</div>
           </div>
         </div>
-      );
-    }
-  }
-
-
-  render() {
-    return (
-      <div>
-        { this.splash() }
       </div>
     );
   }
