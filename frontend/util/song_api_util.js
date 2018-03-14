@@ -21,3 +21,10 @@ export const fetchAllUsersSongs = (userId) => (
     method: 'GET'
   })
 );
+
+export const fetchTopSongs = () => (
+  $.ajax({
+    url:`api/searches`,
+    methid: 'GET'
+  })
+);

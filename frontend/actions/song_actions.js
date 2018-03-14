@@ -57,6 +57,11 @@ export const setDuration = (time) => ({
   time
 });
 
+export const fetchTopSongs = () => dispatch => (
+  SongApiUtil.fetchTopSongs()
+    .then(songs => dispatch(receiveAllSongs(songs)))
+);
+
 export const uploadSong = (song) => dispatch => (
   SongApiUtil.createSong(song)
     .then(songJSON => dispatch(receiveSong(songJSON)))
