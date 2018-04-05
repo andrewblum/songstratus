@@ -51,6 +51,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'rspec-rails', '~> 3.7'
+  gem 'rspec_junit_formatter'
 
 end
 
